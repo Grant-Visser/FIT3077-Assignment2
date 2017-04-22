@@ -13,8 +13,13 @@ namespace WeatherMonitor
 
         public LocationFactory(String locationName)
         {
-            locationName = this.locationName;
+            this.locationName = locationName;
             timeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+        }
+
+        public string getName()
+        {
+            return locationName;
         }
     }
 }

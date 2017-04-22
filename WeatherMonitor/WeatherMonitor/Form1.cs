@@ -16,5 +16,12 @@ namespace WeatherMonitor
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string[] test = { "Moscow", "China", "Cambodia", "Khazakstan"};
+            LocationCollection testCol = new LocationCollection(test);
+            Console.Out.WriteLine(testCol.getAreas());
+        }
     }
 }

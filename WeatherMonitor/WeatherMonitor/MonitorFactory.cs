@@ -19,5 +19,12 @@ namespace WeatherMonitor
             updateTimeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         }
 
+        public MonitorFactory()//Empty Constructor
+        {
+            this.temp = -100;//Need to add guards for this
+            this.rain = -100;//Need to add guards for this
+            updateTimeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+        }
+
     }
 }

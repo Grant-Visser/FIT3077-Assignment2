@@ -8,7 +8,7 @@ namespace WeatherMonitor
 {
     class MonitorCollection
     {
-        private MonitorFactory[] locationArray;
+        private MonitorFactory[] monitorArray;//Copy past is bad juju
 
         public MonitorCollection(string[] input)
         {

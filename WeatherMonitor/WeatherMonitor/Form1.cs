@@ -12,6 +12,8 @@ namespace WeatherMonitor
 {
     public partial class frm1 : Form
     {
+        string[] test = { "Moscow", "China", "Cambodia", "Khazakstan" };//Just a temporary list. web service goes here
+        MonitorCollection monCol = new MonitorCollection();
         public frm1()
         {
             InitializeComponent();
@@ -19,9 +21,14 @@ namespace WeatherMonitor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] test = { "Moscow", "China", "Cambodia", "Khazakstan"};//Just a temporary list
             LocationCollection testCol = new LocationCollection(test);//Creating a new Location collection with objects names provided by the temp list
             Console.Out.WriteLine(testCol.getAreas());//Outputting a formatted string to console
+            monCol.addToCollection(new LocationFactory(test[0]));
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            monCol.update();//Updating all elements in Monitor Collection
         }
     }
 }

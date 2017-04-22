@@ -8,14 +8,37 @@ namespace WeatherMonitor
 {
     class MonitorCollection
     {
-        private MonitorFactory[] monitorArray;//Copy past is bad juju
+        //private MonitorFactory[] monitorArray;//Copy past is bad juju
+        private List<MonitorFactory> monitorArray = new List<MonitorFactory>();//Using a list for it's dynamic functionality and memory performance
 
-        public MonitorCollection(string[] input)
+        public Boolean addToCollection(LocationFactory location)
         {
-            for (int i = 0; i <= input.Length; i++)
+            try
             {
-                MonitorFactory temp = new MonitorFactory();
+                monitorArray.Add(new MonitorFactory(location));
+                monitorArray[monitorArray.Count-1].update();//Updating newly added element
+                return true;
+            }catch(Exception e)
+            {
+                Console.Out.WriteLine(e);
+                return false;
             }
+        }
+
+        public Boolean update()//Complete
+        {
+            try {
+                foreach (MonitorFactory i in monitorArray)
+                {
+                    i.update();
+                }
+                return true;
+            }catch(Exception e)
+            {
+                Console.Out.WriteLine(e);
+                return false;
+            }
+            
         }
 
     }

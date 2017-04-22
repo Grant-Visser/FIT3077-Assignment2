@@ -6,25 +6,33 @@ using System.Threading.Tasks;
 
 namespace WeatherMonitor
 {
-    class MonitorFactory : LocationFactory
+    class MonitorFactory : LocationFactory //Need to make sure we actually need this, due to the fact that I don't know how to turn the location factory structure into the MonitorFactory.
     {
         private string updateTimeStamp;
-        private Double temp;
-        private Double rain;
+        private double temp;
+        private double rain;
 
-        public MonitorFactory(Double temp, Double rain)
+        public double Temp { get => temp; set => temp = value; } //Basic getters/setters
+        public double Rain { get => rain; set => rain = value; } //Basic getters/setters
+        public string UpdateTimeStamp { get => updateTimeStamp; } //Basic getters/setters
+
+        public MonitorFactory(LocationFactory location): base(location.LocationName) //Calling the base class's named constructor. Technically duplicating the base class. Revise this.
         {
-            this.temp = temp;//Need to add guards for this
-            this.rain = rain;//Need to add guards for this
             updateTimeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         }
 
-        public MonitorFactory()//Empty Constructor
+        public Boolean update()
         {
-            this.temp = -100;//Need to add guards for this
-            this.rain = -100;//Need to add guards for this
-            updateTimeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            try
+            {
+                //Web service Goes here
+                Console.Out.WriteLine("Updating");
+                return true;
+            }catch (Exception e)
+            {
+                Console.Out.WriteLine(e);
+                return false;
+            }
         }
-
     }
 }

@@ -8,8 +8,11 @@ namespace WeatherMonitor
 {
     class LocationFactory
     {
-        string locationName;
-        string timeStamp;
+        private string locationName;
+        private string timeStamp;
+
+        public string LocationName { get => locationName; set => locationName = value; } //Basic getters/setters
+        public string TimeStamp { get => timeStamp; set => timeStamp = value; } //Basic getters/setters
 
         public LocationFactory(String locationName)
         {
@@ -21,11 +24,6 @@ namespace WeatherMonitor
         {
             this.locationName = "null";
             timeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-        }
-
-        public string getName()
-        {
-            return locationName;
         }
     }
 }

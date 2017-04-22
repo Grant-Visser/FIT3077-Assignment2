@@ -8,29 +8,38 @@ namespace WeatherMonitor
 {
     class LocationCollection
     {
-        private LocationFactory[] locationArray;
+        //private LocationFactory[] locationArray;
+        private List<LocationFactory> locationArray = new List<LocationFactory>();//Using a list for it's dynamic functionality and memory performance
 
-        public LocationCollection(string[] input)
+        public LocationCollection(string[] input) //input comes from the webservice
         {
-            locationArray = new LocationFactory[input.Length];
             for (int i = 0; i <= input.Length-1 ; i++)
             {
-                LocationFactory temp = new LocationFactory(input[i]);
-                locationArray[i] = temp;
+                LocationFactory temp = new LocationFactory(input[i]); //Creating a collection of location factories
+                locationArray.Add(temp);
             }
         }
 
         public Boolean update()
         {
-            return false;
+            try
+            {
+                //web server stuff goes here or should we have it that the only way that the application can see new addresses be that the app restarts.
+                return true;
+            }catch (Exception e)
+            {
+                Console.Out.WriteLine(e);
+                return false;
+            }
+            
         }
 
         public string getAreas()
         {
             string output = null;
-            for (int i = 0; i <= locationArray.Length-1; i++)
+            for (int i = 0; i <= locationArray.Count-1; i++)
             {
-                output += locationArray[i].getName() + "\n";
+                output += locationArray[i].LocationName + "\n";
             }
             return output;
         }

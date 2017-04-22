@@ -6,4 +6,4 @@ C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\ob
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csproj.GenerateResource.Cache
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.exe
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.pdb
-C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.Form1.resources
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.frm1.resources

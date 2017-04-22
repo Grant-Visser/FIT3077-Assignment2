@@ -33,9 +33,10 @@
             // 
             // btntemp
             // 
+            this.btntemp.AutoSize = true;
             this.btntemp.Location = new System.Drawing.Point(12, 12);
             this.btntemp.Name = "btntemp";
-            this.btntemp.Size = new System.Drawing.Size(75, 23);
+            this.btntemp.Size = new System.Drawing.Size(104, 23);
             this.btntemp.TabIndex = 0;
             this.btntemp.Text = "Make em beautiful";
             this.btntemp.UseVisualStyleBackColor = true;
@@ -50,6 +51,7 @@
             this.Name = "frm1";
             this.Text = "WeatherMonitor";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

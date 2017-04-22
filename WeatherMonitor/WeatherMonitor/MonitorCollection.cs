@@ -14,7 +14,7 @@ namespace WeatherMonitor
         {
             for (int i = 0; i <= input.Length; i++)
             {
-                MonitorFactory temp = new MonitorFactory(input[i]);
+                MonitorFactory temp = new MonitorFactory();
             }
         }
 

@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace WeatherMonitor
 {
-    class MonitorFactory
+    class MonitorFactory : LocationFactory
     {
-        string locationName;
-        string timeStamp;
+        private string updateTimeStamp;
+        private Double temp;
+        private Double rain;
 
-        public MonitorFactory(String locationName)
+        public MonitorFactory(Double temp, Double rain)
         {
-            locationName = this.locationName;
-            timeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            this.temp = temp;//Need to add guards for this
+            this.rain = rain;//Need to add guards for this
+            updateTimeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         }
+
     }
 }

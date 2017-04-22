@@ -17,6 +17,12 @@ namespace WeatherMonitor
             timeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         }
 
+        public LocationFactory()//alternative empty constructor
+        {
+            this.locationName = "null";
+            timeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+        }
+
         public string getName()
         {
             return locationName;

@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace WeatherMonitor
 {
-    public partial class Form1 : Form
+    public partial class frm1 : Form
     {
-        public Form1()
+        public frm1()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] test = { "Moscow", "China", "Cambodia", "Khazakstan"};
-            LocationCollection testCol = new LocationCollection(test);
-            Console.Out.WriteLine(testCol.getAreas());
+            string[] test = { "Moscow", "China", "Cambodia", "Khazakstan"};//Just a temporary list
+            LocationCollection testCol = new LocationCollection(test);//Creating a new Location collection with objects names provided by the temp list
+            Console.Out.WriteLine(testCol.getAreas());//Outputting a formatted string to console
         }
     }
 }

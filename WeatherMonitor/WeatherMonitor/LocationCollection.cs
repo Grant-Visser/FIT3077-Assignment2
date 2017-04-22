@@ -10,6 +10,14 @@ namespace WeatherMonitor
     {
         private LocationFactory[] locationArray;
 
+        public LocationCollection(string[] input)
+        {
+            for (int i = 0; i <= input.Length; i++)
+            {
+                LocationFactory temp = new LocationFactory(input[i]);
+            }
+        }
+
         public Boolean update()
         {
             return false;

@@ -11,10 +11,10 @@ namespace WeatherMonitor
         string locationName;
         string timeStamp;
 
-        public LocationFactory(String locationName, String timeStamp)
+        public LocationFactory(String locationName)
         {
             locationName = this.locationName;
-            timeStamp = this.timeStamp; 
+            timeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         }
     }
 }

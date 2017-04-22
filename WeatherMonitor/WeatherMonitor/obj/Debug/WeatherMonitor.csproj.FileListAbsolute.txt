@@ -1,0 +1,8 @@
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.exe.config
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.exe
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.pdb
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.Properties.Resources.resources
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csproj.GenerateResource.Cache
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.exe
+C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.pdb

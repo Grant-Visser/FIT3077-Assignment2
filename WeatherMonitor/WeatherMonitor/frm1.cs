@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace WeatherMonitor
 {
-    public partial class frm1 : Form
+    public partial class lab : Form
     {
         string[] test = { "Moscow", "China", "Cambodia", "Khazakstan" };//Just a temporary list. web service goes here
         MonitorCollection monCol = new MonitorCollection();
-        public frm1()
+        public lab()
         {
             InitializeComponent();
         }
@@ -35,9 +35,14 @@ namespace WeatherMonitor
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.Out.WriteLine(listBox1.SelectedIndex);
-            Console.Out.WriteLine(listBox1.SelectedItem);
-            Console.Out.WriteLine(listBox1.SelectedValue);
+            Console.Out.WriteLine(lbMonitors.SelectedIndex);
+            Console.Out.WriteLine(lbMonitors.SelectedItem);
+            Console.Out.WriteLine(lbMonitors.SelectedValue);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,29 +33,11 @@ namespace WeatherMonitor
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
+            Console.Out.WriteLine(listBox1.SelectedIndex);
+            Console.Out.WriteLine(listBox1.SelectedItem);
+            Console.Out.WriteLine(listBox1.SelectedValue);
         }
     }
 }

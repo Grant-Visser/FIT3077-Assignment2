@@ -39,14 +39,12 @@
             this.imgAddMonitors = new System.Windows.Forms.PictureBox();
             this.rbtnTemp = new System.Windows.Forms.RadioButton();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnMonitor1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddMonitors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // btntemp
@@ -84,7 +82,6 @@
             this.lblNav.Name = "lblNav";
             this.lblNav.Size = new System.Drawing.Size(284, 492);
             this.lblNav.TabIndex = 3;
-            this.lblNav.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -136,7 +133,6 @@
             this.rbtnRain.TabStop = true;
             this.rbtnRain.Text = "Rainfall";
             this.rbtnRain.UseVisualStyleBackColor = false;
-            this.rbtnRain.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // imgAddMonitors
             // 
@@ -175,20 +171,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // btnMonitor1
-            // 
-            this.btnMonitor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btnMonitor1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMonitor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMonitor1.ForeColor = System.Drawing.Color.Silver;
-            this.btnMonitor1.Location = new System.Drawing.Point(11, 335);
-            this.btnMonitor1.Name = "btnMonitor1";
-            this.btnMonitor1.Size = new System.Drawing.Size(267, 34);
-            this.btnMonitor1.TabIndex = 14;
-            this.btnMonitor1.Text = "Johannesburg";
-            this.btnMonitor1.UseVisualStyleBackColor = false;
-            this.btnMonitor1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
@@ -200,17 +182,6 @@
             this.label1.Size = new System.Drawing.Size(107, 66);
             this.label1.TabIndex = 15;
             this.label1.Text = "T/D";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(248, 341);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
             // 
             // comboBox1
             // 
@@ -233,7 +204,19 @@
             this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 18;
             this.label2.Text = "Location";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Item 1",
+            "Item 2",
+            "Item 3"});
+            this.listBox1.Location = new System.Drawing.Point(0, 335);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(284, 160);
+            this.listBox1.TabIndex = 19;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // frm1
             // 
@@ -241,11 +224,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(791, 492);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnMonitor1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.rbtnTemp);
             this.Controls.Add(this.imgAddMonitors);
@@ -260,7 +242,6 @@
             this.Text = "WeatherMonitor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddMonitors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,11 +258,10 @@
         private System.Windows.Forms.PictureBox imgAddMonitors;
         private System.Windows.Forms.RadioButton rbtnTemp;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnMonitor1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

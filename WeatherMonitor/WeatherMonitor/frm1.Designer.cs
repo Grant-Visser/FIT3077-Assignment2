@@ -88,25 +88,26 @@
             this.lblHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblHeader.Location = new System.Drawing.Point(0, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(791, 43);
+            this.lblHeader.Size = new System.Drawing.Size(791, 33);
             this.lblHeader.TabIndex = 2;
             // 
             // lblNav
             // 
             this.lblNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.lblNav.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblNav.Location = new System.Drawing.Point(0, 43);
+            this.lblNav.Location = new System.Drawing.Point(0, 33);
             this.lblNav.Name = "lblNav";
-            this.lblNav.Size = new System.Drawing.Size(284, 449);
+            this.lblNav.Size = new System.Drawing.Size(284, 459);
             this.lblNav.TabIndex = 3;
             this.lblNav.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(248, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(249, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(31, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -205,7 +206,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(99)))), ((int)(((byte)(234)))));
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 10);
+            this.label3.Location = new System.Drawing.Point(2, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(327, 23);
             this.label3.TabIndex = 12;
@@ -216,7 +217,7 @@
             // 
             this.imgMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.imgMonitors.Image = ((System.Drawing.Image)(resources.GetObject("imgMonitors.Image")));
-            this.imgMonitors.Location = new System.Drawing.Point(6, 346);
+            this.imgMonitors.Location = new System.Drawing.Point(6, 351);
             this.imgMonitors.Name = "imgMonitors";
             this.imgMonitors.Size = new System.Drawing.Size(20, 23);
             this.imgMonitors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,7 +244,7 @@
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Location = new System.Drawing.Point(21, 60);
+            this.label1.Location = new System.Drawing.Point(12, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 66);
             this.label1.TabIndex = 15;

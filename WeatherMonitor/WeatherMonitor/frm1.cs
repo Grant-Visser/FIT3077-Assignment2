@@ -32,5 +32,10 @@ namespace WeatherMonitor
                 monCol.addToCollection(new LocationFactory(test[i]));
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -266,17 +266,17 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Durban",
             "Cape town"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 206);
+            this.comboBox1.Location = new System.Drawing.Point(125, 206);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 21);
+            this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 206);
+            this.label2.Location = new System.Drawing.Point(28, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 18;

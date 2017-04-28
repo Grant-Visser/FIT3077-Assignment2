@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WeatherMonitor.MelbourneWeatherService;
 
 namespace WeatherMonitor
 {
@@ -43,6 +45,33 @@ namespace WeatherMonitor
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //Delete This once Trouble shooted
+        private const int TIMESTAMP_INDEX = 0;
+        private const int RAINFALL_INDEX = 1;
+        private const int TEMPERATURE_INDEX = 1;
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            MelbourneWeather2PortTypeClient client = new MelbourneWeatherService.MelbourneWeather2PortTypeClient("MelbourneWeather2HttpSoap12Endpoint");
+            getLocationsRequest locationsRequest = new getLocationsRequest();
+            string[] locations = client.getLocations();
+            foreach (string location in locations)
+            {
+                getRainfallRequest rainfallRequest = new getRainfallRequest();
+                string[] rainfallData = client.getRainfall(location);
+                getTemperatureRequest temperatureRequest = new getTemperatureRequest();
+                string[] temperatureData = client.getTemperature(location);
+                Debug.WriteLine(
+                                    "{0} @ {1}\n\t" +
+                                    "Temperature:\t{2}\n\t" +
+                                    "Rainfall:\t{3}\n\n",
+                                    location,
+                                    rainfallData[TIMESTAMP_INDEX],
+                                    rainfallData[RAINFALL_INDEX],
+                                    temperatureData[TEMPERATURE_INDEX]
+                                    );
+            }
         }
     }
 }

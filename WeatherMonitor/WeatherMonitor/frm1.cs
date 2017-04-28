@@ -51,7 +51,7 @@ namespace WeatherMonitor
         private const int TIMESTAMP_INDEX = 0;
         private const int RAINFALL_INDEX = 1;
         private const int TEMPERATURE_INDEX = 1;
-        private void btnTest_Click(object sender, EventArgs e)
+        private void btnTest_Click_1(object sender, EventArgs e)
         {
             MelbourneWeather2PortTypeClient client = new MelbourneWeatherService.MelbourneWeather2PortTypeClient("MelbourneWeather2HttpSoap12Endpoint");
             getLocationsRequest locationsRequest = new getLocationsRequest();

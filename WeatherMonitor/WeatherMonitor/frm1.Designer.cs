@@ -31,22 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm1));
             this.btntemp = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.lblNav = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAddMonitor = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMonitors = new System.Windows.Forms.Button();
             this.rbtnRain = new System.Windows.Forms.RadioButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.imgAddMonitors = new System.Windows.Forms.PictureBox();
             this.rbtnTemp = new System.Windows.Forms.RadioButton();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.imgMonitors = new System.Windows.Forms.PictureBox();
+            this.btnMonitor1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddMonitors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMonitors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btntemp
@@ -76,24 +80,24 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // label1
+            // lblHeader
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(99)))), ((int)(((byte)(234)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(694, 43);
-            this.label1.TabIndex = 2;
+            this.lblHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(99)))), ((int)(((byte)(234)))));
+            this.lblHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHeader.Location = new System.Drawing.Point(0, 0);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(694, 43);
+            this.lblHeader.TabIndex = 2;
             // 
-            // label2
+            // lblNav
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Location = new System.Drawing.Point(0, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(284, 449);
-            this.label2.TabIndex = 3;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.lblNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblNav.Location = new System.Drawing.Point(0, 43);
+            this.lblNav.Name = "lblNav";
+            this.lblNav.Size = new System.Drawing.Size(284, 449);
+            this.lblNav.TabIndex = 3;
+            this.lblNav.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -129,18 +133,18 @@
             this.btnAddMonitor.Text = "Add Monitor";
             this.btnAddMonitor.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnMonitors
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(284, 34);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Monitors";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.btnMonitors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMonitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMonitors.ForeColor = System.Drawing.Color.White;
+            this.btnMonitors.Location = new System.Drawing.Point(0, 331);
+            this.btnMonitors.Name = "btnMonitors";
+            this.btnMonitors.Size = new System.Drawing.Size(284, 34);
+            this.btnMonitors.TabIndex = 7;
+            this.btnMonitors.Text = "Monitors";
+            this.btnMonitors.UseVisualStyleBackColor = false;
             // 
             // rbtnRain
             // 
@@ -157,16 +161,16 @@
             this.rbtnRain.UseVisualStyleBackColor = false;
             this.rbtnRain.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // pictureBox3
+            // imgAddMonitors
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 172);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 23);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.imgAddMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.imgAddMonitors.Image = ((System.Drawing.Image)(resources.GetObject("imgAddMonitors.Image")));
+            this.imgAddMonitors.Location = new System.Drawing.Point(6, 172);
+            this.imgAddMonitors.Name = "imgAddMonitors";
+            this.imgAddMonitors.Size = new System.Drawing.Size(20, 23);
+            this.imgAddMonitors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgAddMonitors.TabIndex = 9;
+            this.imgAddMonitors.TabStop = false;
             // 
             // rbtnTemp
             // 
@@ -207,16 +211,53 @@
             this.label3.Text = "Weather monitor - Team Dynamic Hunter";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // pictureBox4
+            // imgMonitors
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(6, 336);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 23);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
+            this.imgMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.imgMonitors.Image = ((System.Drawing.Image)(resources.GetObject("imgMonitors.Image")));
+            this.imgMonitors.Location = new System.Drawing.Point(6, 336);
+            this.imgMonitors.Name = "imgMonitors";
+            this.imgMonitors.Size = new System.Drawing.Size(20, 23);
+            this.imgMonitors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgMonitors.TabIndex = 13;
+            this.imgMonitors.TabStop = false;
+            // 
+            // btnMonitor1
+            // 
+            this.btnMonitor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.btnMonitor1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMonitor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMonitor1.ForeColor = System.Drawing.Color.White;
+            this.btnMonitor1.Location = new System.Drawing.Point(12, 372);
+            this.btnMonitor1.Name = "btnMonitor1";
+            this.btnMonitor1.Size = new System.Drawing.Size(237, 34);
+            this.btnMonitor1.TabIndex = 14;
+            this.btnMonitor1.Text = "Make em beautiful";
+            this.btnMonitor1.UseVisualStyleBackColor = false;
+            this.btnMonitor1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label1.Location = new System.Drawing.Point(21, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 66);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "T/D";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(254, 376);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
             // 
             // frm1
             // 
@@ -224,27 +265,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(694, 492);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMonitor1);
+            this.Controls.Add(this.imgMonitors);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.rbtnTemp);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.imgAddMonitors);
             this.Controls.Add(this.rbtnRain);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnMonitors);
             this.Controls.Add(this.btnAddMonitor);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btntemp);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNav);
+            this.Controls.Add(this.lblHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm1";
             this.Text = "WeatherMonitor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddMonitors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMonitors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,18 +298,21 @@
 
         private System.Windows.Forms.Button btntemp;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHeader;
+        private System.Windows.Forms.Label lblNav;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAddMonitor;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMonitors;
         private System.Windows.Forms.RadioButton rbtnRain;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox imgAddMonitors;
         private System.Windows.Forms.RadioButton rbtnTemp;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox imgMonitors;
+        private System.Windows.Forms.Button btnMonitor1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

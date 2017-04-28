@@ -7,3 +7,12 @@ C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\ob
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.exe
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.pdb
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.frm1.resources
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.exe.config
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.exe
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.pdb
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.frm1.resources
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.Properties.Resources.resources
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csproj.GenerateResource.Cache
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.exe
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.pdb

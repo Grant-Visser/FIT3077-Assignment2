@@ -39,10 +39,10 @@ namespace WeatherMonitor
                 MonitorFactory mf = monCol.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
                 //Updating Outputs
                 Console.Out.WriteLine(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c -  @" + mf.TimeStamp);
-                lblLocation.Text = "Location: " + mf.LocationName;
-                lblRainfall.Text = "Rainfall: " + mf.Rain[1] + " mm of rain";
-                lblTemperature.Text = "Temperature: " + mf.Temp[1] + "°C";
-                lblLastUpdated.Text = "Last Updated: " + mf.TimeStamp;
+                lblLocation.Text = mf.LocationName;
+                lblRainfall.Text = mf.Rain[1] + " mm of rain";
+                lblTemperature.Text = mf.Temp[1] + "°C";
+                lblLastUpdated.Text = mf.TimeStamp;
             }
             catch (Exception e3)//Catching any errors along the way
             {

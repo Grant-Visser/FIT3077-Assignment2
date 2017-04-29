@@ -57,6 +57,7 @@
         private void InitializeComponent()
 
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNav = new System.Windows.Forms.Label();
             this.btnAddMonitor = new System.Windows.Forms.Button();
             this.btnMonitors = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@
             this.cbxRain = new System.Windows.Forms.CheckBox();
             this.cbxTemp = new System.Windows.Forms.CheckBox();
             this.lbOutput = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblNav
@@ -184,7 +186,7 @@
             this.lblLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.lblLastUpdated.ForeColor = System.Drawing.Color.White;
-            this.lblLastUpdated.Location = new System.Drawing.Point(292, 466);
+            this.lblLastUpdated.Location = new System.Drawing.Point(295, 107);
             this.lblLastUpdated.Name = "lblLastUpdated";
             this.lblLastUpdated.Size = new System.Drawing.Size(83, 16);
             this.lblLastUpdated.TabIndex = 26;
@@ -217,10 +219,16 @@
             // lbOutput
             // 
             this.lbOutput.FormattingEnabled = true;
-            this.lbOutput.Location = new System.Drawing.Point(295, 130);
+            this.lbOutput.Location = new System.Drawing.Point(295, 127);
             this.lbOutput.Name = "lbOutput";
-            this.lbOutput.Size = new System.Drawing.Size(484, 329);
+            this.lbOutput.Size = new System.Drawing.Size(484, 355);
             this.lbOutput.TabIndex = 31;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 300000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lab
             // 
@@ -276,6 +284,7 @@
         private System.Windows.Forms.CheckBox cbxRain;
         private System.Windows.Forms.CheckBox cbxTemp;
         private System.Windows.Forms.ListBox lbOutput;
+        private System.Windows.Forms.Timer timer1;
     }
 
 }

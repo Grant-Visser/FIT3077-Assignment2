@@ -8,18 +8,23 @@ namespace WeatherMonitor
 {
     class MonitorCollection
     {
-        //private MonitorFactory[] monitorArray;//Copy past is bad juju
+        //Instance Variables
         private List<MonitorFactory> monitorArray = new List<MonitorFactory>();//Using a list for it's dynamic functionality and memory performance
 
-        internal List<MonitorFactory> MonitorArray { get => monitorArray; set => monitorArray = value; }
+        //Getter/setter
+        internal List<MonitorFactory> MonitorArray {
+            get => monitorArray;
+            set => monitorArray = value;
+        }
 
-        public Boolean addToCollection(MonitorFactory mon) //TODO: we need to add two more arguments to be filled by the form when creating this monitor
+        public Boolean addToCollection(MonitorFactory mon)//Add an entire monitor factory instance to monitorcollection
         {
-            try
+            try//Try to add to collection
             {
-                monitorArray.Add(mon);//Fix this with the new bool values in constructor.
+                monitorArray.Add(mon);//Adding instance to array
+                Console.Out.WriteLine("Updating " + MonitorArray[monitorArray.Count - 1].LocationName);
                 monitorArray[monitorArray.Count-1].update();//Updating newly added element
-                return true;
+                return true;//stewi, if you read this, please just send me a message. I need to explain something.
             }catch(Exception e)
             {
                 Console.Out.WriteLine(e);
@@ -27,15 +32,16 @@ namespace WeatherMonitor
             }
         }
 
-        public Boolean update()//Complete
+        public Boolean update()//calling the update method for each element in the MonitorCollection
         {
-            try {
+            try {//Trying to update each monitorFactory instance that we have stored
                 foreach (MonitorFactory i in monitorArray)
                 {
-                    i.update();
+                    Console.Out.WriteLine("Updating " + i.LocationName);
+                    i.update();//Yo. 
                 }
                 return true;
-            }catch(Exception e)
+            }catch(Exception e)//If it makes a mess
             {
                 Console.Out.WriteLine(e);
                 return false;

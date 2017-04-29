@@ -4,7 +4,7 @@ namespace WeatherMonitor
 {
     public partial class lab : Form
     {
-        //Variaable Declarations
+        //Instance Variables
         LocationCollection locCol = new LocationCollection();
         MonitorCollection monCol = new MonitorCollection();
 
@@ -39,8 +39,8 @@ namespace WeatherMonitor
                 MonitorFactory mf = monCol.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
                 //Updating Outputs
                 lblLastUpdated.Text = "Last Updated: " + mf.TimeStamp;
-                lblLocation.Text = mf.LocationName + "   -   "+ mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c";
-                lbOutput.Items.Add(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c @" + mf.TimeStamp);
+                lblLocation.Text = mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c";
+                lbOutput.Items.Add(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c -  @" + mf.TimeStamp);
             }
             catch (Exception e3)//Catching any errors along the way
             {
@@ -69,6 +69,12 @@ namespace WeatherMonitor
             {
                 Console.Out.WriteLine(e2);//Output errors
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Monitors will now all update", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            monCol.update();//When the timer reaches 5mins, it updates every element in the monitorCollection
         }
     }
 }

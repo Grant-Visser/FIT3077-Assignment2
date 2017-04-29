@@ -8,53 +8,35 @@ namespace WeatherMonitor
 {
     class LocationCollection
     {
-        //private LocationFactory[] locationArray;
+        //Instance Variables
         private List<LocationFactory> locationArray = new List<LocationFactory>();//Using a list for it's dynamic functionality and memory performance
 
-        internal List<LocationFactory> LocationArray { get => locationArray; set => locationArray = value; }
+        //Getter/Setter
+        internal List<LocationFactory> LocationArray {
+            get => locationArray;
+            set => locationArray = value;
+        }
 
-        public bool addToCollection(LocationFactory location)
+        //There is no need to redefine the constructor
+
+        public bool addToCollection(LocationFactory location) //Taking an entire location factory as an argument.
         {
-            try
+            try//Trying to store the location factory
             {
-                locationArray.Add(location);
+                locationArray.Add(location);//Add the location factory to the array of locations factories
                 return true;
             }catch (Exception e)
             {
-                Console.Out.Write(e);
+                Console.Out.Write(e);//Anny errors outputted
                 return false;
             }
         }
 
-        public Boolean update()
+        public bool clear()//Essentially clears the array. Not stricly needed, just makes logical sense
         {
             try
             {
-                //web server stuff goes here or should we have it that the only way that the application can see new addresses be that the app restarts.
-                return true;
-            }catch (Exception e)
-            {
-                Console.Out.WriteLine(e);
-                return false;
-            }
-            
-        }
-
-        public string getAreas()
-        {
-            string output = null;
-            for (int i = 0; i <= locationArray.Count-1; i++)
-            {
-                output += locationArray[i].LocationName + "\n";
-            }
-            return output;
-        }
-
-        public bool clear()
-        {
-            try
-            {
-                locationArray.Clear();
+                locationArray.Clear();//Clears array
                 return true;
             }
             catch (Exception e)

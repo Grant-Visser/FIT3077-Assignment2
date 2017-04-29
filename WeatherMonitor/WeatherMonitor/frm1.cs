@@ -38,9 +38,11 @@ namespace WeatherMonitor
                 Console.Out.WriteLine(lbMonitors.SelectedItem + " monitor selected"); // Confirming logic to console
                 MonitorFactory mf = monCol.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
                 //Updating Outputs
+                Console.Out.WriteLine(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c -  @" + mf.TimeStamp);
+                lblLocation.Text = "Location: " + mf.LocationName;
+                lblRainfall.Text = "Rainfall: " + mf.Rain[1] + " mm of rain";
+                lblTemperature.Text = "Temperature: " + mf.Temp[1] + "°C";
                 lblLastUpdated.Text = "Last Updated: " + mf.TimeStamp;
-                lblLocation.Text = mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c";
-                lbOutput.Items.Add(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c -  @" + mf.TimeStamp);
             }
             catch (Exception e3)//Catching any errors along the way
             {
@@ -57,6 +59,7 @@ namespace WeatherMonitor
                     LocationFactory lf = locCol.LocationArray[cBoxLocation.SelectedIndex]; //assigning a location factory to the one selected by the user from the drop down.
                     monCol.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked));//Creating a new monitor factory element and adding it to the collection.
                     lbMonitors.Items.Add(lf.LocationName);//Adding the monitor to the visual list.
+                    lbMonitors.SelectedIndex = lbMonitors.Items.Count - 1;
                 }
                 else
                 {
@@ -75,21 +78,6 @@ namespace WeatherMonitor
         {
             MessageBox.Show("Monitors will now all update", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
             monCol.update();//When the timer reaches 5mins, it updates every element in the monitorCollection
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbOutput_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

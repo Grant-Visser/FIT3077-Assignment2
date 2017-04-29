@@ -55,6 +55,8 @@ namespace WeatherMonitor
             if (!readRain && !readTemp) //This path does need to be considered!
             {
                 Console.Out.WriteLine("Nothing to update for: " + base.LocationName);
+                temp = new string[] { "Not Requested", "Not Requested" };//Fill the string with nothing if you dont need it
+                rain = new string[] { "Not Requested", "Not Requested" };//Fill the string with nothing if you dont need it
                 return false;
             }
             else {

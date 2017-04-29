@@ -172,12 +172,13 @@
             // 
             // lblLocation
             // 
+            this.lblLocation.AutoSize = true;
             this.lblLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLocation.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLocation.ForeColor = System.Drawing.Color.White;
             this.lblLocation.Location = new System.Drawing.Point(305, 9);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(105, 30);
+            this.lblLocation.Size = new System.Drawing.Size(104, 25);
             this.lblLocation.TabIndex = 23;
             this.lblLocation.Text = "Location";
             // 
@@ -213,34 +214,37 @@
             // 
             // lblTemperature
             // 
+            this.lblTemperature.AutoSize = true;
             this.lblTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblTemperature.ForeColor = System.Drawing.Color.White;
             this.lblTemperature.Location = new System.Drawing.Point(305, 145);
             this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(152, 30);
+            this.lblTemperature.Size = new System.Drawing.Size(152, 25);
             this.lblTemperature.TabIndex = 32;
             this.lblTemperature.Text = "Temperature";
             // 
             // lblRainfall
             // 
+            this.lblRainfall.AutoSize = true;
             this.lblRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblRainfall.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblRainfall.ForeColor = System.Drawing.Color.White;
             this.lblRainfall.Location = new System.Drawing.Point(305, 75);
             this.lblRainfall.Name = "lblRainfall";
-            this.lblRainfall.Size = new System.Drawing.Size(91, 30);
+            this.lblRainfall.Size = new System.Drawing.Size(91, 25);
             this.lblRainfall.TabIndex = 33;
             this.lblRainfall.Text = "Rainfall";
             // 
             // lblLastUpdated
             // 
+            this.lblLastUpdated.AutoSize = true;
             this.lblLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLastUpdated.ForeColor = System.Drawing.Color.White;
             this.lblLastUpdated.Location = new System.Drawing.Point(305, 218);
             this.lblLastUpdated.Name = "lblLastUpdated";
-            this.lblLastUpdated.Size = new System.Drawing.Size(155, 30);
+            this.lblLastUpdated.Size = new System.Drawing.Size(155, 25);
             this.lblLastUpdated.TabIndex = 34;
             this.lblLastUpdated.Text = "Last updated";
             // 

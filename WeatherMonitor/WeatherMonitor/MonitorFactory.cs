@@ -21,8 +21,7 @@ namespace WeatherMonitor
         public string[] Temp { get => temp; set => temp = value; }
         public string[] Rain { get => rain; set => rain = value; }
 
-        public MonitorFactory(LocationFactory location, bool getRain, bool getTemp): base(location.LocationName) //This is super weird. Need to find a better way. 
-            //Calling the base class's named constructor. Technically duplicating the base class. Revise this.
+        public MonitorFactory(LocationFactory location, bool getRain, bool getTemp): base(location.LocationName)//Calling the base class's named constructor.
         {
             updateTimeStamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
             readRain = getRain;
@@ -49,11 +48,19 @@ namespace WeatherMonitor
                         Console.Out.WriteLine("Temperature updated: " + temp[1]);
                         updateTimeStamp = temp[0];
                     }
+                    else
+                    {
+                        temp = new string[] { "Not Requested", "Not Requested" };
+                    }
                     if (readRain)
                     {
                         rain = wi.getRainfall(base.LocationName);
                         Console.Out.WriteLine("Rainfall updated: " + rain[1]);
                         updateTimeStamp = rain[0];
+                    }
+                    else
+                    {
+                        rain = new string[] { "Not Requested" , "Not Requested" };
                     }
                     
                     return true;

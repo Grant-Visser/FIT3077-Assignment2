@@ -89,6 +89,7 @@
             this.btntemp.TabIndex = 0;
             this.btntemp.Text = "Make em beautiful";
             this.btntemp.UseVisualStyleBackColor = false;
+            this.btntemp.Click += new System.EventHandler(this.btntemp_Click);
             // 
             // btnUpdate
             // 

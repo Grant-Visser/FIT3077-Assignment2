@@ -11,6 +11,8 @@ namespace WeatherMonitor
         //private MonitorFactory[] monitorArray;//Copy past is bad juju
         private List<MonitorFactory> monitorArray = new List<MonitorFactory>();//Using a list for it's dynamic functionality and memory performance
 
+        internal List<MonitorFactory> MonitorArray { get => monitorArray; set => monitorArray = value; }
+
         public Boolean addToCollection(MonitorFactory mon) //TODO: we need to add two more arguments to be filled by the form when creating this monitor
         {
             try

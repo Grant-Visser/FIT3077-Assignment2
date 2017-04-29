@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WeatherMonitor
 {
     public partial class lab : Form
@@ -17,88 +8,67 @@ namespace WeatherMonitor
         LocationCollection locCol = new LocationCollection();
         MonitorCollection monCol = new MonitorCollection();
 
-        //Helper Methods
-        private bool updateLocations()
+        public lab() //Constructor
         {
-            try
+            InitializeComponent();//initialises the form
+
+            try//tries to add all the locations from the web server to the cboxlocation form object
             {
-                cBoxLocation.Items.Clear();
-                locCol.clear();
+                cBoxLocation.Items.Clear();//Clearing the cbox
+                locCol.clear();//Clearing the location array(just in case)
                 string[] location;
-                WebInterface melbourneWeatherService = new WebInterface();
-                location = melbourneWeatherService.getLocations();
+                WebInterface melbourneWeatherService = new WebInterface(); //Creating an instance of the weather interface I wrote.
+                location = melbourneWeatherService.getLocations();//Pulling string array of locations from server
                 foreach (string item in location)
                 {
-                    locCol.addToCollection(new LocationFactory(item));
-                    cBoxLocation.Items.Add(item);
+                    locCol.addToCollection(new LocationFactory(item));//Create new location factory element and add it to the Location collection
+                    cBoxLocation.Items.Add(item);//Adding the location to the interface(with the same index as above! :D)
                 }
-                return true;
             }
             catch (Exception e)
             {
-                Console.Out.WriteLine(e);
-                return false;
+                Console.Out.WriteLine(e);//Outputting any issues if failed.
             }
-        }
-
-        public lab() //Constructor
-        {
-            InitializeComponent();
-            updateLocations(); //Constructor updates the locations available for selection
-        }
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            //monCol.update();//Updating all elements in Monitor Collection
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.Out.WriteLine(lbMonitors.SelectedItem + " Item");
+            try//trying to show data from monitors on the GUI.
+            {
+                Console.Out.WriteLine(lbMonitors.SelectedItem + " monitor selected"); // Confirming logic to console
+                MonitorFactory mf = monCol.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
+                //Updating Outputs
+                lblTemperature.Text = mf.Temp[1];
+                lblRainfall.Text = mf.Rain[1];
+                lblLastUpdated.Text = mf.TimeStamp;
+                lblLocation.Text = mf.LocationName;
+            }
+            catch (Exception e3)//Catching any errors along the way
+            {
+                Console.Out.WriteLine(e3);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            try //Trying to add a monitor to the monitor collection
             {
-                if (!(cBoxLocation.Text.Equals("Please Make a Selection")))
+                if (!(cBoxLocation.Text.Equals("Please Make a Selection")))//If they have selected something
                 {
-                    bool found = false;
-                    int i = 0;
-                    LocationFactory lf = null;
-                    //Boolean search constrained to the size of the array (number of lactaion factories) contained within Location Colelction
-                    while (!found && i<locCol.LocationArray.Count)
-                    {
-                        if (locCol.LocationArray[i].LocationName.Equals(cBoxLocation.SelectedItem))
-                        {
-                            Console.Out.WriteLine("Selected location was found in the location collection!");
-                            found = true;
-                            lf = locCol.LocationArray[i];
-                            Console.Out.WriteLine(lf.LocationName);
-                        }
-                        else
-                        {
-                            i++;
-                        }
-                    }
-                    if (!(found))
-                    {
-                        Console.Out.WriteLine("Selected location not found in the location collection");
-                        MessageBox.Show("Something Horrible Happened. The Application will now exit", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit();
-                    }
-                    monCol.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked));
-                    lbMonitors.Items.Add(lf.LocationName);
-                    //MonitorFactory test = new MonitorFactory()
+                    LocationFactory lf = locCol.LocationArray[cBoxLocation.SelectedIndex]; //assigning a location factory to the one selected by the user from the drop down.
+                    monCol.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked));//Creating a new monitor factory element and adding it to the collection.
+                    lbMonitors.Items.Add(lf.LocationName);//Adding the monitor to the visual list.
                 }
                 else
                 {
                     Console.Out.WriteLine("Please select a location!");
                     MessageBox.Show("Please select a location from the location drop down menu", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                
-            }catch (Exception e2)
+
+            }
+            catch (Exception e2)
             {
-                Console.Out.WriteLine(e2);
+                Console.Out.WriteLine(e2);//Output errors
             }
         }
     }

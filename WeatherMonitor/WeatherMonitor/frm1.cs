@@ -8,69 +8,97 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WeatherMonitor.MelbourneWeatherService;
 
 namespace WeatherMonitor
 {
     public partial class lab : Form
     {
-        string[] test = { "Moscow", "China", "Cambodia", "Khazakstan" };//Just a temporary list. web service goes here
+        //Variaable Declarations
+        LocationCollection locCol = new LocationCollection();
         MonitorCollection monCol = new MonitorCollection();
-        public lab()
+
+        //Helper Methods
+        private bool updateLocations()
+        {
+            try
+            {
+                cBoxLocation.Items.Clear();
+                locCol.clear();
+                string[] location;
+                WebInterface melbourneWeatherService = new WebInterface();
+                location = melbourneWeatherService.getLocations();
+                foreach (string item in location)
+                {
+                    locCol.addToCollection(new LocationFactory(item));
+                    cBoxLocation.Items.Add(item);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.Out.WriteLine(e);
+                return false;
+            }
+        }
+
+        public lab() //Constructor
         {
             InitializeComponent();
+            updateLocations(); //Constructor updates the locations available for selection
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            monCol.update();//Updating all elements in Monitor Collection
-        }
-
-        private void btnTemp_Click(object sender, EventArgs e)
-        {
-            LocationCollection testCol = new LocationCollection(test);//Creating a new Location collection with objects names provided by the temp list
-            Console.Out.WriteLine(testCol.getAreas());//Outputting a formatted string to console
-            for (int i = 0; i < test.Length; i++)
-            {
-                monCol.addToCollection(new LocationFactory(test[i]));
-            }
+            //monCol.update();//Updating all elements in Monitor Collection
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.Out.WriteLine(lbMonitors.SelectedIndex);
-            Console.Out.WriteLine(lbMonitors.SelectedItem);
-            Console.Out.WriteLine(lbMonitors.SelectedValue);
+            Console.Out.WriteLine(lbMonitors.SelectedItem + " Item");
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-
-        }
-
-        //Delete This once Trouble shooted
-        private const int TIMESTAMP_INDEX = 0;
-        private const int RAINFALL_INDEX = 1;
-        private const int TEMPERATURE_INDEX = 1;
-        private void btnTest_Click_1(object sender, EventArgs e)
-        {
-            MelbourneWeather2PortTypeClient client = new MelbourneWeatherService.MelbourneWeather2PortTypeClient("MelbourneWeather2HttpSoap12Endpoint");
-            getLocationsRequest locationsRequest = new getLocationsRequest();
-            string[] locations = client.getLocations();
-            foreach (string location in locations)
+            try
             {
-                getRainfallRequest rainfallRequest = new getRainfallRequest();
-                string[] rainfallData = client.getRainfall(location);
-                getTemperatureRequest temperatureRequest = new getTemperatureRequest();
-                string[] temperatureData = client.getTemperature(location);
-                Debug.WriteLine(
-                                    "{0} @ {1}\n\t" +
-                                    "Temperature:\t{2}\n\t" +
-                                    "Rainfall:\t{3}\n\n",
-                                    location,
-                                    rainfallData[TIMESTAMP_INDEX],
-                                    rainfallData[RAINFALL_INDEX],
-                                    temperatureData[TEMPERATURE_INDEX]
-                                    );
+                if (!(cBoxLocation.Text.Equals("Please Make a Selection")))
+                {
+                    bool found = false;
+                    int i = 0;
+                    LocationFactory lf = null;
+                    //Boolean search constrained to the size of the array (number of lactaion factories) contained within Location Colelction
+                    while (!found && i<locCol.LocationArray.Count)
+                    {
+                        if (locCol.LocationArray[i].LocationName.Equals(cBoxLocation.SelectedItem))
+                        {
+                            Console.Out.WriteLine("Selected location was found in the location collection!");
+                            found = true;
+                            lf = locCol.LocationArray[i];
+                            Console.Out.WriteLine(lf.LocationName);
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    }
+                    if (!(found))
+                    {
+                        Console.Out.WriteLine("Selected location not found in the location collection");
+                        MessageBox.Show("Something Horrible Happened. The Application will now exit", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Application.Exit();
+                    }
+                    monCol.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked));
+                    lbMonitors.Items.Add(lf.LocationName);
+                    //MonitorFactory test = new MonitorFactory()
+                }
+                else
+                {
+                    Console.Out.WriteLine("Please select a location!");
+                    MessageBox.Show("Please select a location from the location drop down menu", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                
+            }catch (Exception e2)
+            {
+                Console.Out.WriteLine(e2);
             }
         }
     }

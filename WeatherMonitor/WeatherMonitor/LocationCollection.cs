@@ -11,12 +11,18 @@ namespace WeatherMonitor
         //private LocationFactory[] locationArray;
         private List<LocationFactory> locationArray = new List<LocationFactory>();//Using a list for it's dynamic functionality and memory performance
 
-        public LocationCollection(string[] input) //input comes from the webservice
+        internal List<LocationFactory> LocationArray { get => locationArray; set => locationArray = value; }
+
+        public bool addToCollection(LocationFactory location)
         {
-            for (int i = 0; i <= input.Length-1 ; i++)
+            try
             {
-                LocationFactory temp = new LocationFactory(input[i]); //Creating a collection of location factories
-                locationArray.Add(temp);
+                locationArray.Add(location);
+                return true;
+            }catch (Exception e)
+            {
+                Console.Out.Write(e);
+                return false;
             }
         }
 
@@ -42,6 +48,19 @@ namespace WeatherMonitor
                 output += locationArray[i].LocationName + "\n";
             }
             return output;
+        }
+
+        public bool clear()
+        {
+            try
+            {
+                locationArray.Clear();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

@@ -67,13 +67,14 @@
             this.cBoxLocation = new System.Windows.Forms.ComboBox();
             this.lblLocationcbox = new System.Windows.Forms.Label();
             this.lbMonitors = new System.Windows.Forms.ListBox();
-            this.cLBox = new System.Windows.Forms.CheckedListBox();
             this.lblLocation = new System.Windows.Forms.Label();
             this.lblTemperature = new System.Windows.Forms.Label();
             this.lblRainfall = new System.Windows.Forms.Label();
             this.lblLastUpdated = new System.Windows.Forms.Label();
             this.LblLastUpdatedHolder = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
+            this.cbxRain = new System.Windows.Forms.CheckBox();
+            this.cbxTemp = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btntemp
@@ -88,7 +89,6 @@
             this.btntemp.TabIndex = 0;
             this.btntemp.Text = "Make em beautiful";
             this.btntemp.UseVisualStyleBackColor = false;
-            this.btntemp.Click += new System.EventHandler(this.btnTemp_Click);
             // 
             // btnUpdate
             // 
@@ -151,6 +151,7 @@
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -168,12 +169,12 @@
             // 
             this.cBoxLocation.FormattingEnabled = true;
             this.cBoxLocation.Items.AddRange(new object[] {
-            "Durban",
-            "Cape town"});
+            "Free State Orange Farm"});
             this.cBoxLocation.Location = new System.Drawing.Point(101, 133);
             this.cBoxLocation.Name = "cBoxLocation";
             this.cBoxLocation.Size = new System.Drawing.Size(174, 21);
             this.cBoxLocation.TabIndex = 17;
+            this.cBoxLocation.Text = "Please Make a Selection";
             // 
             // lblLocationcbox
             // 
@@ -189,31 +190,11 @@
             // lbMonitors
             // 
             this.lbMonitors.FormattingEnabled = true;
-            this.lbMonitors.Items.AddRange(new object[] {
-            "Item 1",
-            "Item 2",
-            "Item 3"});
             this.lbMonitors.Location = new System.Drawing.Point(11, 322);
             this.lbMonitors.Name = "lbMonitors";
             this.lbMonitors.Size = new System.Drawing.Size(264, 160);
             this.lbMonitors.TabIndex = 19;
             this.lbMonitors.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // cLBox
-            // 
-            this.cLBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.cLBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cLBox.CheckOnClick = true;
-            this.cLBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cLBox.ForeColor = System.Drawing.Color.White;
-            this.cLBox.FormattingEnabled = true;
-            this.cLBox.Items.AddRange(new object[] {
-            "Rainfall",
-            "Temperature"});
-            this.cLBox.Location = new System.Drawing.Point(31, 160);
-            this.cLBox.Name = "cLBox";
-            this.cLBox.Size = new System.Drawing.Size(120, 38);
-            this.cLBox.TabIndex = 22;
             // 
             // lblLocation
             // 
@@ -247,7 +228,6 @@
             this.lblRainfall.Size = new System.Drawing.Size(106, 32);
             this.lblRainfall.TabIndex = 25;
             this.lblRainfall.Text = "Rainfall";
-            this.lblRainfall.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblLastUpdated
             // 
@@ -270,13 +250,36 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(290, 441);
+            this.btnTest.Location = new System.Drawing.Point(290, 459);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(122, 23);
             this.btnTest.TabIndex = 28;
             this.btnTest.Text = "Fetch from server";
             this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click_1);
+            // 
+            // cbxRain
+            // 
+            this.cbxRain.AutoSize = true;
+            this.cbxRain.Checked = true;
+            this.cbxRain.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxRain.Location = new System.Drawing.Point(31, 158);
+            this.cbxRain.Name = "cbxRain";
+            this.cbxRain.Size = new System.Drawing.Size(48, 17);
+            this.cbxRain.TabIndex = 29;
+            this.cbxRain.Text = "Rain";
+            this.cbxRain.UseVisualStyleBackColor = true;
+            // 
+            // cbxTemp
+            // 
+            this.cbxTemp.AutoSize = true;
+            this.cbxTemp.Checked = true;
+            this.cbxTemp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxTemp.Location = new System.Drawing.Point(31, 181);
+            this.cbxTemp.Name = "cbxTemp";
+            this.cbxTemp.Size = new System.Drawing.Size(86, 17);
+            this.cbxTemp.TabIndex = 30;
+            this.cbxTemp.Text = "Temperature";
+            this.cbxTemp.UseVisualStyleBackColor = true;
             // 
             // lab
             // 
@@ -284,13 +287,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(791, 492);
+            this.Controls.Add(this.cbxTemp);
+            this.Controls.Add(this.cbxRain);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lblLastUpdated);
             this.Controls.Add(this.LblLastUpdatedHolder);
             this.Controls.Add(this.lblRainfall);
             this.Controls.Add(this.lblTemperature);
             this.Controls.Add(this.lblLocation);
-            this.Controls.Add(this.cLBox);
             this.Controls.Add(this.lbMonitors);
             this.Controls.Add(this.lblLocationcbox);
             this.Controls.Add(this.cBoxLocation);
@@ -302,8 +306,9 @@
             this.Controls.Add(this.btntemp);
             this.Controls.Add(this.lblNav);
             this.Name = "lab";
-            this.Text = "WeatherMonitor";
+            this.Text = "Melbourne Weather Monitor";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -333,8 +338,6 @@
 
         private System.Windows.Forms.ListBox lbMonitors;
 
-        private System.Windows.Forms.CheckedListBox cLBox;
-
         private System.Windows.Forms.Label lblLocation;
 
         private System.Windows.Forms.Label lblTemperature;
@@ -345,6 +348,8 @@
 
         private System.Windows.Forms.Label LblLastUpdatedHolder;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.CheckBox cbxRain;
+        private System.Windows.Forms.CheckBox cbxTemp;
     }
 
 }

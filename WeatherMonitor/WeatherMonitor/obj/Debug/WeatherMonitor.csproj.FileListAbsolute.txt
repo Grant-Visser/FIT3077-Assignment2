@@ -10,7 +10,6 @@ C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\D
 C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.exe
 C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Debug\WeatherMonitor.pdb
 C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.frm1.resources
 C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.Properties.Resources.resources
 C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.csproj.GenerateResource.Cache
 C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.exe
@@ -25,3 +24,4 @@ C:\Users\Stuart\Documents\KrakenClone V2\dynamichunter-Assignments\WeatherMonito
 C:\Users\Stuart\Documents\KrakenClone V2\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.pdb
 C:\Users\Stuart\Documents\KrakenClone V2\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.lab.resources
 C:\Users\Grant\GitHub\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.lab.resources
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Debug\WeatherMonitor.lab.resources

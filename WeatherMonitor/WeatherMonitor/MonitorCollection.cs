@@ -11,11 +11,11 @@ namespace WeatherMonitor
         //private MonitorFactory[] monitorArray;//Copy past is bad juju
         private List<MonitorFactory> monitorArray = new List<MonitorFactory>();//Using a list for it's dynamic functionality and memory performance
 
-        public Boolean addToCollection(LocationFactory location) //TODO: we need to add two more arguments to be filled by the form when creating this monitor
+        public Boolean addToCollection(MonitorFactory mon) //TODO: we need to add two more arguments to be filled by the form when creating this monitor
         {
             try
             {
-                monitorArray.Add(new MonitorFactory(location,false,true));//Fix this with the new bool values in constructor.
+                monitorArray.Add(mon);//Fix this with the new bool values in constructor.
                 monitorArray[monitorArray.Count-1].update();//Updating newly added element
                 return true;
             }catch(Exception e)
@@ -37,11 +37,7 @@ namespace WeatherMonitor
             {
                 Console.Out.WriteLine(e);
                 return false;
-            }
-            
+            }   
         }
-
-    }
-
-   
+    }   
 }

@@ -67,11 +67,12 @@
             this.lblLocationcbox = new System.Windows.Forms.Label();
             this.lbMonitors = new System.Windows.Forms.ListBox();
             this.lblLocation = new System.Windows.Forms.Label();
-            this.lblLastUpdated = new System.Windows.Forms.Label();
             this.cbxRain = new System.Windows.Forms.CheckBox();
             this.cbxTemp = new System.Windows.Forms.CheckBox();
-            this.lbOutput = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTemperature = new System.Windows.Forms.Label();
+            this.lblRainfall = new System.Windows.Forms.Label();
+            this.lblLastUpdated = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNav
@@ -174,23 +175,11 @@
             this.lblLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLocation.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLocation.ForeColor = System.Drawing.Color.White;
-            this.lblLocation.Location = new System.Drawing.Point(290, 33);
+            this.lblLocation.Location = new System.Drawing.Point(305, 9);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(489, 93);
+            this.lblLocation.Size = new System.Drawing.Size(105, 30);
             this.lblLocation.TabIndex = 23;
             this.lblLocation.Text = "Location";
-            // 
-            // lblLastUpdated
-            // 
-            this.lblLastUpdated.AutoSize = true;
-            this.lblLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.lblLastUpdated.ForeColor = System.Drawing.Color.White;
-            this.lblLastUpdated.Location = new System.Drawing.Point(295, 107);
-            this.lblLastUpdated.Name = "lblLastUpdated";
-            this.lblLastUpdated.Size = new System.Drawing.Size(83, 16);
-            this.lblLastUpdated.TabIndex = 26;
-            this.lblLastUpdated.Text = "Last Updated";
             // 
             // cbxRain
             // 
@@ -216,19 +205,44 @@
             this.cbxTemp.Text = "Temperature";
             this.cbxTemp.UseVisualStyleBackColor = true;
             // 
-            // lbOutput
-            // 
-            this.lbOutput.FormattingEnabled = true;
-            this.lbOutput.Location = new System.Drawing.Point(295, 127);
-            this.lbOutput.Name = "lbOutput";
-            this.lbOutput.Size = new System.Drawing.Size(484, 355);
-            this.lbOutput.TabIndex = 31;
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 300000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblTemperature
+            // 
+            this.lblTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblTemperature.ForeColor = System.Drawing.Color.White;
+            this.lblTemperature.Location = new System.Drawing.Point(305, 145);
+            this.lblTemperature.Name = "lblTemperature";
+            this.lblTemperature.Size = new System.Drawing.Size(152, 30);
+            this.lblTemperature.TabIndex = 32;
+            this.lblTemperature.Text = "Temperature";
+            // 
+            // lblRainfall
+            // 
+            this.lblRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblRainfall.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblRainfall.ForeColor = System.Drawing.Color.White;
+            this.lblRainfall.Location = new System.Drawing.Point(305, 75);
+            this.lblRainfall.Name = "lblRainfall";
+            this.lblRainfall.Size = new System.Drawing.Size(91, 30);
+            this.lblRainfall.TabIndex = 33;
+            this.lblRainfall.Text = "Rainfall";
+            // 
+            // lblLastUpdated
+            // 
+            this.lblLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblLastUpdated.ForeColor = System.Drawing.Color.White;
+            this.lblLastUpdated.Location = new System.Drawing.Point(305, 218);
+            this.lblLastUpdated.Name = "lblLastUpdated";
+            this.lblLastUpdated.Size = new System.Drawing.Size(155, 30);
+            this.lblLastUpdated.TabIndex = 34;
+            this.lblLastUpdated.Text = "Last updated";
             // 
             // lab
             // 
@@ -236,10 +250,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(791, 492);
-            this.Controls.Add(this.lbOutput);
+            this.Controls.Add(this.lblLastUpdated);
+            this.Controls.Add(this.lblRainfall);
+            this.Controls.Add(this.lblTemperature);
             this.Controls.Add(this.cbxTemp);
             this.Controls.Add(this.cbxRain);
-            this.Controls.Add(this.lblLastUpdated);
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.lbMonitors);
             this.Controls.Add(this.lblLocationcbox);
@@ -279,12 +294,12 @@
         private System.Windows.Forms.ListBox lbMonitors;
 
         private System.Windows.Forms.Label lblLocation;
-
-        private System.Windows.Forms.Label lblLastUpdated;
         private System.Windows.Forms.CheckBox cbxRain;
         private System.Windows.Forms.CheckBox cbxTemp;
-        private System.Windows.Forms.ListBox lbOutput;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTemperature;
+        private System.Windows.Forms.Label lblRainfall;
+        private System.Windows.Forms.Label lblLastUpdated;
     }
 
 }

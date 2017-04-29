@@ -57,8 +57,6 @@
         private void InitializeComponent()
 
         {
-            this.btntemp = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblNav = new System.Windows.Forms.Label();
             this.btnAddMonitor = new System.Windows.Forms.Button();
             this.btnMonitors = new System.Windows.Forms.Button();
@@ -68,41 +66,11 @@
             this.lblLocationcbox = new System.Windows.Forms.Label();
             this.lbMonitors = new System.Windows.Forms.ListBox();
             this.lblLocation = new System.Windows.Forms.Label();
-            this.lblTemperature = new System.Windows.Forms.Label();
-            this.lblRainfall = new System.Windows.Forms.Label();
             this.lblLastUpdated = new System.Windows.Forms.Label();
-            this.LblLastUpdatedHolder = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.cbxRain = new System.Windows.Forms.CheckBox();
             this.cbxTemp = new System.Windows.Forms.CheckBox();
+            this.lbOutput = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // btntemp
-            // 
-            this.btntemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btntemp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btntemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntemp.ForeColor = System.Drawing.Color.White;
-            this.btntemp.Location = new System.Drawing.Point(369, 9);
-            this.btntemp.Name = "btntemp";
-            this.btntemp.Size = new System.Drawing.Size(154, 34);
-            this.btntemp.TabIndex = 0;
-            this.btntemp.Text = "Make em beautiful";
-            this.btntemp.UseVisualStyleBackColor = false;
-            this.btntemp.Click += new System.EventHandler(this.btntemp_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(290, 9);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(61, 34);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblNav
             // 
@@ -116,6 +84,7 @@
             // btnAddMonitor
             // 
             this.btnAddMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.btnAddMonitor.Enabled = false;
             this.btnAddMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMonitor.ForeColor = System.Drawing.Color.Silver;
@@ -130,6 +99,7 @@
             // btnMonitors
             // 
             this.btnMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.btnMonitors.Enabled = false;
             this.btnMonitors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMonitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonitors.ForeColor = System.Drawing.Color.Silver;
@@ -202,61 +172,23 @@
             this.lblLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLocation.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLocation.ForeColor = System.Drawing.Color.White;
-            this.lblLocation.Location = new System.Drawing.Point(317, 55);
+            this.lblLocation.Location = new System.Drawing.Point(290, 33);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(110, 32);
+            this.lblLocation.Size = new System.Drawing.Size(489, 93);
             this.lblLocation.TabIndex = 23;
             this.lblLocation.Text = "Location";
             // 
-            // lblTemperature
-            // 
-            this.lblTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.lblTemperature.ForeColor = System.Drawing.Color.White;
-            this.lblTemperature.Location = new System.Drawing.Point(460, 55);
-            this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(158, 32);
-            this.lblTemperature.TabIndex = 24;
-            this.lblTemperature.Text = "Temperature";
-            // 
-            // lblRainfall
-            // 
-            this.lblRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.lblRainfall.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.lblRainfall.ForeColor = System.Drawing.Color.White;
-            this.lblRainfall.Location = new System.Drawing.Point(650, 55);
-            this.lblRainfall.Name = "lblRainfall";
-            this.lblRainfall.Size = new System.Drawing.Size(106, 32);
-            this.lblRainfall.TabIndex = 25;
-            this.lblRainfall.Text = "Rainfall";
-            // 
             // lblLastUpdated
             // 
+            this.lblLastUpdated.AutoSize = true;
             this.lblLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.lblLastUpdated.ForeColor = System.Drawing.Color.White;
-            this.lblLastUpdated.Location = new System.Drawing.Point(561, 447);
+            this.lblLastUpdated.Location = new System.Drawing.Point(292, 466);
             this.lblLastUpdated.Name = "lblLastUpdated";
-            this.lblLastUpdated.Size = new System.Drawing.Size(163, 32);
+            this.lblLastUpdated.Size = new System.Drawing.Size(83, 16);
             this.lblLastUpdated.TabIndex = 26;
-            this.lblLastUpdated.Text = "Last updated";
-            // 
-            // LblLastUpdatedHolder
-            // 
-            this.LblLastUpdatedHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.LblLastUpdatedHolder.Location = new System.Drawing.Point(558, 441);
-            this.LblLastUpdatedHolder.Name = "LblLastUpdatedHolder";
-            this.LblLastUpdatedHolder.Size = new System.Drawing.Size(221, 41);
-            this.LblLastUpdatedHolder.TabIndex = 27;
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(290, 459);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(122, 23);
-            this.btnTest.TabIndex = 28;
-            this.btnTest.Text = "Fetch from server";
-            this.btnTest.UseVisualStyleBackColor = true;
+            this.lblLastUpdated.Text = "Last Updated";
             // 
             // cbxRain
             // 
@@ -282,19 +214,24 @@
             this.cbxTemp.Text = "Temperature";
             this.cbxTemp.UseVisualStyleBackColor = true;
             // 
+            // lbOutput
+            // 
+            this.lbOutput.FormattingEnabled = true;
+            this.lbOutput.Location = new System.Drawing.Point(295, 130);
+            this.lbOutput.Name = "lbOutput";
+            this.lbOutput.Size = new System.Drawing.Size(484, 329);
+            this.lbOutput.TabIndex = 31;
+            // 
             // lab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(791, 492);
+            this.Controls.Add(this.lbOutput);
             this.Controls.Add(this.cbxTemp);
             this.Controls.Add(this.cbxRain);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.lblLastUpdated);
-            this.Controls.Add(this.LblLastUpdatedHolder);
-            this.Controls.Add(this.lblRainfall);
-            this.Controls.Add(this.lblTemperature);
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.lbMonitors);
             this.Controls.Add(this.lblLocationcbox);
@@ -303,8 +240,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnMonitors);
             this.Controls.Add(this.btnAddMonitor);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btntemp);
             this.Controls.Add(this.lblNav);
             this.Name = "lab";
             this.Text = "Melbourne Weather Monitor";
@@ -318,10 +253,6 @@
         #endregion
 
 
-
-        private System.Windows.Forms.Button btntemp;
-
-        private System.Windows.Forms.Button btnUpdate;
 
         private System.Windows.Forms.Label lblNav;
 
@@ -341,16 +272,10 @@
 
         private System.Windows.Forms.Label lblLocation;
 
-        private System.Windows.Forms.Label lblTemperature;
-
-        private System.Windows.Forms.Label lblRainfall;
-
         private System.Windows.Forms.Label lblLastUpdated;
-
-        private System.Windows.Forms.Label LblLastUpdatedHolder;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.CheckBox cbxRain;
         private System.Windows.Forms.CheckBox cbxTemp;
+        private System.Windows.Forms.ListBox lbOutput;
     }
 
 }

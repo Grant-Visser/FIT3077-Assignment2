@@ -38,10 +38,9 @@ namespace WeatherMonitor
                 Console.Out.WriteLine(lbMonitors.SelectedItem + " monitor selected"); // Confirming logic to console
                 MonitorFactory mf = monCol.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
                 //Updating Outputs
-                lblTemperature.Text = mf.Temp[1];
-                lblRainfall.Text = mf.Rain[1];
-                lblLastUpdated.Text = mf.TimeStamp;
-                lblLocation.Text = mf.LocationName;
+                lblLastUpdated.Text = "Last Updated: " + mf.TimeStamp;
+                lblLocation.Text = mf.LocationName + "   -   "+ mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c";
+                lbOutput.Items.Add(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c @" + mf.TimeStamp);
             }
             catch (Exception e3)//Catching any errors along the way
             {

@@ -77,9 +77,9 @@
             this.gBoxRainfall = new System.Windows.Forms.Label();
             this.gBoxTemperature = new System.Windows.Forms.Label();
             this.lblLocationHeader = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTemperatureHeader = new System.Windows.Forms.Label();
+            this.lblRainfallHeader = new System.Windows.Forms.Label();
+            this.lblLastUpdatedHeader = new System.Windows.Forms.Label();
             this.lblRainfall = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -290,41 +290,41 @@
             this.lblLocationHeader.TabIndex = 46;
             this.lblLocationHeader.Text = "Location";
             // 
-            // label7
+            // lblTemperatureHeader
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(290, 128);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 25);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Temperature";
+            this.lblTemperatureHeader.AutoSize = true;
+            this.lblTemperatureHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblTemperatureHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblTemperatureHeader.ForeColor = System.Drawing.Color.White;
+            this.lblTemperatureHeader.Location = new System.Drawing.Point(290, 128);
+            this.lblTemperatureHeader.Name = "lblTemperatureHeader";
+            this.lblTemperatureHeader.Size = new System.Drawing.Size(152, 25);
+            this.lblTemperatureHeader.TabIndex = 47;
+            this.lblTemperatureHeader.Text = "Temperature";
             // 
-            // label8
+            // lblRainfallHeader
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(288, 249);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 25);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Rainfall";
+            this.lblRainfallHeader.AutoSize = true;
+            this.lblRainfallHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblRainfallHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblRainfallHeader.ForeColor = System.Drawing.Color.White;
+            this.lblRainfallHeader.Location = new System.Drawing.Point(288, 249);
+            this.lblRainfallHeader.Name = "lblRainfallHeader";
+            this.lblRainfallHeader.Size = new System.Drawing.Size(91, 25);
+            this.lblRainfallHeader.TabIndex = 48;
+            this.lblRainfallHeader.Text = "Rainfall";
             // 
-            // label9
+            // lblLastUpdatedHeader
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(290, 371);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(155, 25);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "Last updated";
+            this.lblLastUpdatedHeader.AutoSize = true;
+            this.lblLastUpdatedHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblLastUpdatedHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblLastUpdatedHeader.ForeColor = System.Drawing.Color.White;
+            this.lblLastUpdatedHeader.Location = new System.Drawing.Point(290, 371);
+            this.lblLastUpdatedHeader.Name = "lblLastUpdatedHeader";
+            this.lblLastUpdatedHeader.Size = new System.Drawing.Size(155, 25);
+            this.lblLastUpdatedHeader.TabIndex = 49;
+            this.lblLastUpdatedHeader.Text = "Last updated";
             // 
             // lblRainfall
             // 
@@ -344,9 +344,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(791, 492);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblLastUpdatedHeader);
+            this.Controls.Add(this.lblRainfallHeader);
+            this.Controls.Add(this.lblTemperatureHeader);
             this.Controls.Add(this.lblLocationHeader);
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.lblTemperature);
@@ -406,9 +406,9 @@
         private System.Windows.Forms.Label gBoxRainfall;
         private System.Windows.Forms.Label gBoxTemperature;
         private System.Windows.Forms.Label lblLocationHeader;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTemperatureHeader;
+        private System.Windows.Forms.Label lblRainfallHeader;
+        private System.Windows.Forms.Label lblLastUpdatedHeader;
         private System.Windows.Forms.Label lblRainfall;
     }
 

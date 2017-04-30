@@ -58,6 +58,7 @@
 
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lab));
             this.lblNav = new System.Windows.Forms.Label();
             this.btnAddMonitor = new System.Windows.Forms.Button();
             this.btnMonitors = new System.Windows.Forms.Button();
@@ -95,7 +96,7 @@
             // btnAddMonitor
             // 
             this.btnAddMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btnAddMonitor.Enabled = false;
+            this.btnAddMonitor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAddMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMonitor.ForeColor = System.Drawing.Color.Silver;
@@ -110,7 +111,7 @@
             // btnMonitors
             // 
             this.btnMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btnMonitors.Enabled = false;
+            this.btnMonitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMonitors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMonitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonitors.ForeColor = System.Drawing.Color.Silver;
@@ -138,14 +139,15 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Pacifico", 25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 66);
+            this.label1.Size = new System.Drawing.Size(263, 66);
             this.label1.TabIndex = 15;
-            this.label1.Text = "T/D";
+            this.label1.Text = "Dynamic Hunter";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // cBoxLocation
             // 
@@ -171,6 +173,8 @@
             // 
             // lbMonitors
             // 
+            this.lbMonitors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbMonitors.FormattingEnabled = true;
             this.lbMonitors.Location = new System.Drawing.Point(11, 322);
             this.lbMonitors.Name = "lbMonitors";
@@ -183,7 +187,7 @@
             this.lblLocation.AutoSize = true;
             this.lblLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.lblLocation.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblLocation.ForeColor = System.Drawing.Color.White;
             this.lblLocation.Location = new System.Drawing.Point(290, 60);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(0, 44);
@@ -195,9 +199,11 @@
             this.cbxRain.AutoSize = true;
             this.cbxRain.Checked = true;
             this.cbxRain.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxRain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbxRain.ForeColor = System.Drawing.SystemColors.Control;
             this.cbxRain.Location = new System.Drawing.Point(31, 158);
             this.cbxRain.Name = "cbxRain";
-            this.cbxRain.Size = new System.Drawing.Size(48, 17);
+            this.cbxRain.Size = new System.Drawing.Size(61, 24);
             this.cbxRain.TabIndex = 29;
             this.cbxRain.Text = "Rain";
             this.cbxRain.UseVisualStyleBackColor = true;
@@ -207,9 +213,11 @@
             this.cbxTemp.AutoSize = true;
             this.cbxTemp.Checked = true;
             this.cbxTemp.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxTemp.Location = new System.Drawing.Point(31, 181);
+            this.cbxTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbxTemp.ForeColor = System.Drawing.SystemColors.Control;
+            this.cbxTemp.Location = new System.Drawing.Point(31, 183);
             this.cbxTemp.Name = "cbxTemp";
-            this.cbxTemp.Size = new System.Drawing.Size(86, 17);
+            this.cbxTemp.Size = new System.Drawing.Size(119, 24);
             this.cbxTemp.TabIndex = 30;
             this.cbxTemp.Text = "Temperature";
             this.cbxTemp.UseVisualStyleBackColor = true;
@@ -225,7 +233,7 @@
             this.lblTemperature.AutoSize = true;
             this.lblTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 27.5F);
-            this.lblTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblTemperature.ForeColor = System.Drawing.Color.White;
             this.lblTemperature.Location = new System.Drawing.Point(290, 181);
             this.lblTemperature.Name = "lblTemperature";
             this.lblTemperature.Size = new System.Drawing.Size(0, 44);
@@ -237,7 +245,7 @@
             this.lblLastUpdated.AutoSize = true;
             this.lblLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.lblLastUpdated.Font = new System.Drawing.Font("Century Gothic", 27.5F);
-            this.lblLastUpdated.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblLastUpdated.ForeColor = System.Drawing.Color.White;
             this.lblLastUpdated.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblLastUpdated.Location = new System.Drawing.Point(290, 423);
             this.lblLastUpdated.Name = "lblLastUpdated";
@@ -247,15 +255,19 @@
             // 
             // gBoxLocation
             // 
+            this.gBoxLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gBoxLocation.Location = new System.Drawing.Point(290, 9);
             this.gBoxLocation.Name = "gBoxLocation";
-            this.gBoxLocation.Size = new System.Drawing.Size(492, 111);
+            this.gBoxLocation.Size = new System.Drawing.Size(492, 108);
             this.gBoxLocation.TabIndex = 42;
             // 
             // gBoxLastUpdated
             // 
+            this.gBoxLastUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLastUpdated.Location = new System.Drawing.Point(290, 371);
             this.gBoxLastUpdated.Name = "gBoxLastUpdated";
@@ -264,6 +276,8 @@
             // 
             // gBoxRainfall
             // 
+            this.gBoxRainfall.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxRainfall.Location = new System.Drawing.Point(290, 249);
             this.gBoxRainfall.Name = "gBoxRainfall";
@@ -272,6 +286,8 @@
             // 
             // gBoxTemperature
             // 
+            this.gBoxTemperature.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxTemperature.Location = new System.Drawing.Point(290, 128);
             this.gBoxTemperature.Name = "gBoxTemperature";
@@ -331,7 +347,7 @@
             this.lblRainfall.AutoSize = true;
             this.lblRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.lblRainfall.Font = new System.Drawing.Font("Century Gothic", 27.5F);
-            this.lblRainfall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
+            this.lblRainfall.ForeColor = System.Drawing.Color.White;
             this.lblRainfall.Location = new System.Drawing.Point(290, 300);
             this.lblRainfall.Name = "lblRainfall";
             this.lblRainfall.Size = new System.Drawing.Size(0, 44);
@@ -366,6 +382,7 @@
             this.Controls.Add(this.gBoxLastUpdated);
             this.Controls.Add(this.gBoxRainfall);
             this.Controls.Add(this.gBoxTemperature);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "lab";
             this.Text = "Melbourne Weather Monitor";
             this.ResumeLayout(false);

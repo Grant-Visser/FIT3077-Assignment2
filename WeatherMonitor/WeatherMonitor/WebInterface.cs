@@ -1,5 +1,6 @@
-﻿//Created by Grant Visser - 25476807 - grvis1@student.monash.edu
-
+﻿//Created by Grant Visser - 25476807 - grvis1@student.monash.edu - For educational use only! Distibuted and explained to students who asked for assistance.
+//Class based on concept presented by Patrick Shaw on Moodel Forums - Please see his thread for instructions to add a service reference to your project: http://moodle.vle.monash.edu/mod/forum/discuss.php?d=1031263#p2863261
+//V3.0
 using WeatherMonitor.MelbourneWeatherService;
 
 namespace WeatherMonitor

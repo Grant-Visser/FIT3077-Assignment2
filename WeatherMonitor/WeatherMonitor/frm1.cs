@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+
 namespace WeatherMonitor
 {
     public partial class lab : Form
@@ -58,7 +59,7 @@ namespace WeatherMonitor
                 {
                     LocationFactory lf = locCol.LocationArray[cBoxLocation.SelectedIndex]; //assigning a location factory to the one selected by the user from the drop down.
                     monCol.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked));//Creating a new monitor factory element and adding it to the collection.
-                    lbMonitors.Items.Add(lf.LocationName);//Adding the monitor to the visual list.
+                    lbMonitors.Items.Add(lf.LocationName + ": Temp-" + cbxTemp.Checked + " Rain-" + cbxRain.Checked);//Adding the monitor to the visual list.
                     lbMonitors.SelectedIndex = lbMonitors.Items.Count - 1;
                 }
                 else

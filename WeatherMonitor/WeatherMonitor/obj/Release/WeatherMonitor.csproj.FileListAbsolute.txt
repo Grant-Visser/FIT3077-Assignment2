@@ -1,0 +1,8 @@
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Release\WeatherMonitor.exe.config
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Release\WeatherMonitor.exe
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\bin\Release\WeatherMonitor.pdb
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Release\WeatherMonitor.lab.resources
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Release\WeatherMonitor.Properties.Resources.resources
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Release\WeatherMonitor.csproj.GenerateResource.Cache
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Release\WeatherMonitor.exe
+C:\Users\Admin\Git\dynamichunter-Assignments\WeatherMonitor\WeatherMonitor\obj\Release\WeatherMonitor.pdb

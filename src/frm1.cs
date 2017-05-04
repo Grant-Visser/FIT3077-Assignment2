@@ -80,5 +80,21 @@ namespace WeatherMonitor
             MessageBox.Show("Monitors will now all update", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
             monCol.update();//When the timer reaches 5mins, it updates every element in the monitorCollection
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                monCol.MonitorArray.RemoveAt(lbMonitors.SelectedIndex);
+                lbMonitors.Items.RemoveAt(lbMonitors.SelectedIndex);
+                lbMonitors.SelectedIndex = 0;
+                MessageBox.Show("Monitor Deleted", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show("Error in removing monitor", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.Out.WriteLine("Error in removing Monitor: " +e3);
+            }
+        }
     }
 }

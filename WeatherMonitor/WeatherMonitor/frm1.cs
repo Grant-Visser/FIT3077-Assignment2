@@ -93,7 +93,7 @@ namespace WeatherMonitor
             catch (Exception e3)
             {
                 MessageBox.Show("Error in removing monitor", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.Out.WriteLine("Error in removing Monitor");
+                Console.Out.WriteLine("Error in removing Monitor: " +e3);
             }
         }
     }

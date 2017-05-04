@@ -82,6 +82,7 @@
             this.lblRainfallHeader = new System.Windows.Forms.Label();
             this.lblLastUpdatedHeader = new System.Windows.Forms.Label();
             this.lblRainfall = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNav
@@ -178,7 +179,7 @@
             this.lbMonitors.FormattingEnabled = true;
             this.lbMonitors.Location = new System.Drawing.Point(11, 322);
             this.lbMonitors.Name = "lbMonitors";
-            this.lbMonitors.Size = new System.Drawing.Size(264, 160);
+            this.lbMonitors.Size = new System.Drawing.Size(264, 121);
             this.lbMonitors.TabIndex = 19;
             this.lbMonitors.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -354,12 +355,27 @@
             this.lblRainfall.TabIndex = 33;
             this.lblRainfall.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ForeColor = System.Drawing.Color.Silver;
+            this.btnRemove.Location = new System.Drawing.Point(31, 450);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(215, 32);
+            this.btnRemove.TabIndex = 50;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // lab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(791, 492);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblLastUpdatedHeader);
             this.Controls.Add(this.lblRainfallHeader);
             this.Controls.Add(this.lblTemperatureHeader);
@@ -427,6 +443,7 @@
         private System.Windows.Forms.Label lblRainfallHeader;
         private System.Windows.Forms.Label lblLastUpdatedHeader;
         private System.Windows.Forms.Label lblRainfall;
+        private System.Windows.Forms.Button btnRemove;
     }
 
 }

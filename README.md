@@ -1,5 +1,7 @@
 # Team Dynamic Hunter
 ### Assignments created by Team Dynamic Hunter
+
+Find the latest download here: [Releases](https://github.com/Monash-University-FIT3077/dynamichunter-Assignments/releases)
 1. Assignment 2 Stage - 1
 
           The diagrams required for this project have been added to the folder named Diagrams. Please see inside for the files you need for marking.

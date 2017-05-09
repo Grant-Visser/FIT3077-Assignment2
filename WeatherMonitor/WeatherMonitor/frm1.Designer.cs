@@ -140,7 +140,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.label1.Font = new System.Drawing.Font("Pacifico", 25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label1.Location = new System.Drawing.Point(12, 9);
@@ -208,6 +208,7 @@
             this.cbxRain.TabIndex = 29;
             this.cbxRain.Text = "Rain";
             this.cbxRain.UseVisualStyleBackColor = true;
+            this.cbxRain.CheckedChanged += new System.EventHandler(this.cbxRain_CheckedChanged);
             // 
             // cbxTemp
             // 

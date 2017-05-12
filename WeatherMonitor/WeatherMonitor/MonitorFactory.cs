@@ -39,7 +39,7 @@ namespace WeatherMonitor
         //Custom constructor that also calls the base classes constructor
         public MonitorFactory(LocationFactory location, bool getRain, bool getTemp): base(location.LocationName)//Calling the base class's named constructor.
         {
-            updateTimeStamp = DateTime.Now.ToString("yyyy/MM/dd/HH:mm:ssfff");//Updating the timestamp
+            updateTimeStamp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");//Updating the timestamp
             readRain = getRain;//setting instance variables
             readTemp = getTemp;
 

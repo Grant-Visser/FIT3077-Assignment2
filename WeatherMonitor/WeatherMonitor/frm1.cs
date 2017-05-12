@@ -57,7 +57,7 @@ namespace WeatherMonitor
                     lblTemperature.Text = "Not Requested";
                 }
                 lblLocation.Text = mf.LocationName;
-                lblLastUpdated.Text = mf.TimeStamp;
+                lblLastUpdated.Text = mf.UpdateTimeStamp;
                 
                 
             }
@@ -93,8 +93,11 @@ namespace WeatherMonitor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Monitors will now all update", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            monCol.update();//When the timer reaches 5mins, it updates every element in the monitorCollection
+            if (monCol.MonitorArray.Count > 0)
+            {
+                MessageBox.Show("Monitors will now all update", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                monCol.update();//When the timer reaches 5mins, it updates every element in the monitorCollection
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

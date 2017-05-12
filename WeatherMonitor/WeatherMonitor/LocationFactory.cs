@@ -21,13 +21,13 @@ namespace WeatherMonitor
         public LocationFactory(String locationName)//Custom constructor
         {
             this.locationName = locationName;//Stores the name of the class locally
-            timeStamp = DateTime.Now.ToString("MM/dd/HH:mm:ss");//Updates the timestamp
+            timeStamp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");//Updates the timestamp
         }
 
         public LocationFactory()//Standard constructor initial values 
         {
             this.locationName = "null";
-            timeStamp = DateTime.Now.ToString("MM/dd/HH:mm:ss");
+            timeStamp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

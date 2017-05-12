@@ -38,6 +38,7 @@ namespace WeatherMonitor
             }
             catch (Exception e)
             {
+                Console.Out.Write(e);
                 return false;
             }
         }

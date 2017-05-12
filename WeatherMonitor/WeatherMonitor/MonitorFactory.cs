@@ -18,8 +18,8 @@ namespace WeatherMonitor
         }
 
         public bool ReadRain {
-            get => ReadRain;
-            set => ReadRain = value;
+            get => readRain;
+            set => readRain = value;
         }
 
         public string UpdateTimeStamp {

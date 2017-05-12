@@ -208,7 +208,6 @@
             this.cbxRain.TabIndex = 29;
             this.cbxRain.Text = "Rain";
             this.cbxRain.UseVisualStyleBackColor = true;
-            this.cbxRain.CheckedChanged += new System.EventHandler(this.cbxRain_CheckedChanged);
             // 
             // cbxTemp
             // 

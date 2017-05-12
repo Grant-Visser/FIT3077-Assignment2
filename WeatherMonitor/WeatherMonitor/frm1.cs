@@ -40,15 +40,26 @@ namespace WeatherMonitor
                 MonitorFactory mf = monCol.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
                 //Updating Outputs
                 Console.Out.WriteLine(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c -  @" + mf.TimeStamp);
-                lblLocation.Text = mf.LocationName;
-                lblLastUpdated.Text = mf.TimeStamp;
-                if (!cbxRain.Checked) { lblRainfall.Text = mf.Rain[1] + ""; }
-                if (!cbxTemp.Checked) { lblTemperature.Text = mf.Rain[1] + ""; }
-                else
+                if (mf.ReadRain)
                 {
                     lblRainfall.Text = mf.Rain[1] + " mm of rain";
+                }
+                else
+                {
+                    lblRainfall.Text = "Not Requested";
+                }
+                if (mf.ReadTemp)
+                {
                     lblTemperature.Text = mf.Temp[1] + "°C";
                 }
+                else
+                {
+                    lblTemperature.Text = "Not Requested";
+                }
+                lblLocation.Text = mf.LocationName;
+                lblLastUpdated.Text = mf.TimeStamp;
+                
+                
             }
             catch (Exception e3)//Catching any errors along the way
             {
@@ -100,11 +111,6 @@ namespace WeatherMonitor
                 MessageBox.Show("Error in removing monitor", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.Out.WriteLine("Error in removing Monitor: " +e3);
             }
-        }
-
-        private void cbxRain_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

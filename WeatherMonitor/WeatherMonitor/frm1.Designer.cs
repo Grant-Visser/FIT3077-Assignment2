@@ -83,6 +83,10 @@
             this.lblLastUpdatedHeader = new System.Windows.Forms.Label();
             this.lblRainfall = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.chart1 = new LiveCharts.WinForms.CartesianChart();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
+            this.solidGauge2 = new LiveCharts.WinForms.SolidGauge();
             this.SuspendLayout();
             // 
             // lblNav
@@ -262,7 +266,7 @@
             this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gBoxLocation.Location = new System.Drawing.Point(290, 9);
             this.gBoxLocation.Name = "gBoxLocation";
-            this.gBoxLocation.Size = new System.Drawing.Size(492, 108);
+            this.gBoxLocation.Size = new System.Drawing.Size(373, 108);
             this.gBoxLocation.TabIndex = 42;
             // 
             // gBoxLastUpdated
@@ -272,7 +276,7 @@
             this.gBoxLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLastUpdated.Location = new System.Drawing.Point(290, 371);
             this.gBoxLastUpdated.Name = "gBoxLastUpdated";
-            this.gBoxLastUpdated.Size = new System.Drawing.Size(492, 111);
+            this.gBoxLastUpdated.Size = new System.Drawing.Size(373, 111);
             this.gBoxLastUpdated.TabIndex = 43;
             // 
             // gBoxRainfall
@@ -282,7 +286,7 @@
             this.gBoxRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxRainfall.Location = new System.Drawing.Point(290, 249);
             this.gBoxRainfall.Name = "gBoxRainfall";
-            this.gBoxRainfall.Size = new System.Drawing.Size(492, 111);
+            this.gBoxRainfall.Size = new System.Drawing.Size(373, 111);
             this.gBoxRainfall.TabIndex = 44;
             // 
             // gBoxTemperature
@@ -292,7 +296,7 @@
             this.gBoxTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxTemperature.Location = new System.Drawing.Point(290, 128);
             this.gBoxTemperature.Name = "gBoxTemperature";
-            this.gBoxTemperature.Size = new System.Drawing.Size(492, 111);
+            this.gBoxTemperature.Size = new System.Drawing.Size(373, 111);
             this.gBoxTemperature.TabIndex = 45;
             // 
             // lblLocationHeader
@@ -369,12 +373,51 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // chart1
+            // 
+            this.chart1.BackColorTransparent = true;
+            this.chart1.Location = new System.Drawing.Point(670, 9);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(451, 351);
+            this.chart1.TabIndex = 51;
+            this.chart1.Text = "cartesianChart1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(670, 371);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(451, 111);
+            this.textBox1.TabIndex = 52;
+            // 
+            // solidGauge1
+            // 
+            this.solidGauge1.Location = new System.Drawing.Point(538, 128);
+            this.solidGauge1.Name = "solidGauge1";
+            this.solidGauge1.Size = new System.Drawing.Size(126, 111);
+            this.solidGauge1.TabIndex = 53;
+            this.solidGauge1.Text = "solidGauge1";
+            // 
+            // solidGauge2
+            // 
+            this.solidGauge2.BackColorTransparent = true;
+            this.solidGauge2.Location = new System.Drawing.Point(538, 249);
+            this.solidGauge2.Name = "solidGauge2";
+            this.solidGauge2.Size = new System.Drawing.Size(126, 111);
+            this.solidGauge2.TabIndex = 54;
+            this.solidGauge2.Text = "solidGauge2";
+            // 
             // lab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.ClientSize = new System.Drawing.Size(791, 492);
+            this.ClientSize = new System.Drawing.Size(1133, 492);
+            this.Controls.Add(this.solidGauge2);
+            this.Controls.Add(this.solidGauge1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblLastUpdatedHeader);
             this.Controls.Add(this.lblRainfallHeader);
@@ -444,6 +487,10 @@
         private System.Windows.Forms.Label lblLastUpdatedHeader;
         private System.Windows.Forms.Label lblRainfall;
         private System.Windows.Forms.Button btnRemove;
+        private LiveCharts.WinForms.CartesianChart chart1;
+        public System.Windows.Forms.TextBox textBox1;
+        private LiveCharts.WinForms.SolidGauge solidGauge1;
+        private LiveCharts.WinForms.SolidGauge solidGauge2;
     }
 
 }

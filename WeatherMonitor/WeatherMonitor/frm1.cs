@@ -1,4 +1,7 @@
 ﻿using System;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.WinForms;
 using System.Windows.Forms;
 
 namespace WeatherMonitor

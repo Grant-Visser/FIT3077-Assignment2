@@ -41,6 +41,7 @@
             this.txtOut = new System.Windows.Forms.TextBox();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +151,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(383, 453);
             this.panel1.TabIndex = 50;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtOut
             // 
@@ -162,6 +164,7 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.ForeColor = System.Drawing.Color.Transparent;
             this.cartesianChart1.Location = new System.Drawing.Point(386, 101);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(556, 330);
@@ -212,5 +215,6 @@
         private System.Windows.Forms.TextBox txtOut;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Timer tmrUpdate;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

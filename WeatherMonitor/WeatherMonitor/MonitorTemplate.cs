@@ -13,11 +13,7 @@ using LiveCharts.Wpf;
 
 namespace WeatherMonitor
 {
-    public class MeasureModel
-    {
-        public System.DateTime DateTime { get; set; }
-        public double Value { get; set; }
-    }
+    
     public partial class MonitorTemplate : Form
     {
         private MonitorFactory mf { get; set; }
@@ -28,6 +24,12 @@ namespace WeatherMonitor
         {
             InitializeComponent();
             this.Show();
+        }
+
+        public class MeasureModel
+        {
+            public System.DateTime DateTime { get; set; }
+            public double Value { get; set; }
         }
 
         public MonitorTemplate(MonitorFactory input)//Modified Constructor
@@ -50,15 +52,17 @@ namespace WeatherMonitor
             {
                 new LineSeries
                 {
+                    Title = "Rain",
                     Values = ChartValues,
                     PointGeometrySize = 18,
-                    StrokeThickness = 4
+                    StrokeThickness = 3
                 },
                 new LineSeries
                 {
+                    Title = "Temperature",
                     Values = ChartValues2,
                     PointGeometrySize = 18,
-                    StrokeThickness = 4
+                    StrokeThickness = 3
                 }
 
             };
@@ -67,7 +71,7 @@ namespace WeatherMonitor
             cartesianChart1.AxisX.Add(new Axis
             {
                 DisableAnimations = true,
-                LabelFormatter = value => new System.DateTime((long)value).ToString("mm:ss"),
+                LabelFormatter = value => "",
                 Separator = new Separator
                 {
                     Step = TimeSpan.FromSeconds(20).Ticks
@@ -78,11 +82,11 @@ namespace WeatherMonitor
 
 
         }
-
+        
         private void SetAxisLimits(System.DateTime now)
         {
-            cartesianChart1.AxisX[0].MaxValue = now.Ticks + TimeSpan.FromSeconds(400).Ticks; // lets force the axis to be 100ms ahead
-            cartesianChart1.AxisX[0].MinValue = now.Ticks - TimeSpan.FromSeconds(400).Ticks; //we only care about the last 8 seconds*/
+            cartesianChart1.AxisX[0].MaxValue = now.Ticks + TimeSpan.FromSeconds(20).Ticks; // lets force the axis to be 100ms ahead
+            cartesianChart1.AxisX[0].MinValue = now.Ticks - TimeSpan.FromSeconds(400).Ticks; //we only care about the last 8 seconds
         }
 
         private void MonitorTemplate_Load(object sender, EventArgs e)
@@ -121,6 +125,11 @@ namespace WeatherMonitor
             });
 
             SetAxisLimits(now);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

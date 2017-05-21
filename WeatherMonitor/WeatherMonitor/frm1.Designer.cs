@@ -69,7 +69,6 @@
             this.cbxRain = new System.Windows.Forms.CheckBox();
             this.cbxTemp = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblTemperature = new System.Windows.Forms.Label();
             this.lblLastUpdated = new System.Windows.Forms.Label();
             this.gBoxLocation = new System.Windows.Forms.Label();
             this.gBoxLastUpdated = new System.Windows.Forms.Label();
@@ -77,18 +76,15 @@
             this.lblTemperatureHeader = new System.Windows.Forms.Label();
             this.lblRainfallHeader = new System.Windows.Forms.Label();
             this.lblLastUpdatedHeader = new System.Windows.Forms.Label();
-            this.lblRainfall = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.gaugeTemp = new LiveCharts.WinForms.SolidGauge();
             this.gaugeRainfall = new LiveCharts.WinForms.SolidGauge();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbx5min = new System.Windows.Forms.RadioButton();
             this.rbx20s = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoveForms = new System.Windows.Forms.Button();
             this.lb20s = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -210,18 +206,6 @@
             this.timer1.Interval = 300000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblTemperature
-            // 
-            this.lblTemperature.AutoSize = true;
-            this.lblTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.lblTemperature.Font = new System.Drawing.Font("Century Gothic", 27.5F);
-            this.lblTemperature.ForeColor = System.Drawing.Color.White;
-            this.lblTemperature.Location = new System.Drawing.Point(290, 181);
-            this.lblTemperature.Name = "lblTemperature";
-            this.lblTemperature.Size = new System.Drawing.Size(0, 44);
-            this.lblTemperature.TabIndex = 32;
-            this.lblTemperature.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblLastUpdated
             // 
             this.lblLastUpdated.AutoSize = true;
@@ -239,7 +223,8 @@
             // 
             this.gBoxLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gBoxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gBoxLocation.Location = new System.Drawing.Point(284, 0);
             this.gBoxLocation.Name = "gBoxLocation";
             this.gBoxLocation.Size = new System.Drawing.Size(632, 118);
@@ -250,6 +235,8 @@
             // 
             this.gBoxLastUpdated.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
+            this.gBoxLastUpdated.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBoxLastUpdated.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gBoxLastUpdated.Location = new System.Drawing.Point(286, 427);
             this.gBoxLastUpdated.Name = "gBoxLastUpdated";
             this.gBoxLastUpdated.Size = new System.Drawing.Size(630, 111);
@@ -304,18 +291,6 @@
             this.lblLastUpdatedHeader.TabIndex = 49;
             this.lblLastUpdatedHeader.Text = "Last updated";
             // 
-            // lblRainfall
-            // 
-            this.lblRainfall.AutoSize = true;
-            this.lblRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.lblRainfall.Font = new System.Drawing.Font("Century Gothic", 27.5F);
-            this.lblRainfall.ForeColor = System.Drawing.Color.White;
-            this.lblRainfall.Location = new System.Drawing.Point(290, 300);
-            this.lblRainfall.Name = "lblRainfall";
-            this.lblRainfall.Size = new System.Drawing.Size(0, 44);
-            this.lblRainfall.TabIndex = 33;
-            this.lblRainfall.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
@@ -332,7 +307,7 @@
             // 
             // gaugeTemp
             // 
-            this.gaugeTemp.BackColorTransparent = true;
+            this.gaugeTemp.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gaugeTemp.Location = new System.Drawing.Point(296, 170);
             this.gaugeTemp.Name = "gaugeTemp";
             this.gaugeTemp.Size = new System.Drawing.Size(300, 245);
@@ -341,17 +316,12 @@
             // 
             // gaugeRainfall
             // 
-            this.gaugeRainfall.BackColorTransparent = true;
+            this.gaugeRainfall.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gaugeRainfall.Location = new System.Drawing.Point(601, 170);
             this.gaugeRainfall.Name = "gaugeRainfall";
             this.gaugeRainfall.Size = new System.Drawing.Size(300, 245);
             this.gaugeRainfall.TabIndex = 54;
             this.gaugeRainfall.Text = "solidGauge2";
-            // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // groupBox1
             // 
@@ -450,17 +420,14 @@
             this.Controls.Add(this.lblTemperatureHeader);
             this.Controls.Add(this.lblLocationHeader);
             this.Controls.Add(this.lblLocation);
-            this.Controls.Add(this.lblTemperature);
             this.Controls.Add(this.gBoxLocation);
             this.Controls.Add(this.lblLastUpdated);
-            this.Controls.Add(this.lblRainfall);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNav);
             this.Controls.Add(this.gBoxLastUpdated);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "lab";
             this.Text = "Melbourne Weather Monitor";
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -491,7 +458,6 @@
         private System.Windows.Forms.CheckBox cbxRain;
         private System.Windows.Forms.CheckBox cbxTemp;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label lblTemperature;
         private System.Windows.Forms.Label lblLastUpdated;
         private System.Windows.Forms.Label gBoxLocation;
         private System.Windows.Forms.Label gBoxLastUpdated;
@@ -499,11 +465,9 @@
         private System.Windows.Forms.Label lblTemperatureHeader;
         private System.Windows.Forms.Label lblRainfallHeader;
         private System.Windows.Forms.Label lblLastUpdatedHeader;
-        private System.Windows.Forms.Label lblRainfall;
         private System.Windows.Forms.Button btnRemove;
         private LiveCharts.WinForms.SolidGauge gaugeTemp;
         private LiveCharts.WinForms.SolidGauge gaugeRainfall;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbx20s;
         private System.Windows.Forms.RadioButton rbx5min;

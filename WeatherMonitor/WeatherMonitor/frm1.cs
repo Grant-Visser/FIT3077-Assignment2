@@ -17,6 +17,11 @@ namespace WeatherMonitor
         public lab() //Constructor
         {
             InitializeComponent();//initialises the form
+            gaugeRainfall.Uses360Mode = true;
+            gaugeTemp.Uses360Mode = true;
+            gaugeTemp.To = 40;
+            gaugeRainfall.To = 5;
+
             locCol5m.LocationArray.Clear();//initialises the array
             locCol20s.LocationArray.Clear();//initialises the array
             try//tries to add all the locations from the web server to the cboxlocation form object
@@ -60,26 +65,42 @@ namespace WeatherMonitor
                 MonitorFactory mf = monCol5m.MonitorArray[lbMonitors.SelectedIndex]; //Assigning the monitor corresponding to the one created and then selected by the user. 
                 //Updating Outputs
                 Console.Out.WriteLine(mf.LocationName + "   -   " + mf.Rain[1] + "mm   -   " + mf.Temp[1] + "°c -  @" + mf.TimeStamp);
-                if (mf.ReadRain || !mf.Rain[1].Equals("Server Error"))
+                if (!mf.Rain[1].Equals("Server Error"))
                 {
-                    lblRainfall.Text = mf.Rain[1] + " mm of rain";
-                    gaugeRainfall.Value = Convert.ToDouble(mf.Rain[1]);
+                    if (mf.ReadRain == true)
+                    {
+                        gaugeRainfall.Value = Convert.ToDouble(mf.Rain[1]);
+                    }
+                    else
+                    {
+                        gaugeRainfall.Value = 0.0;
+                    }
+                    
                 }
                 else
                 {
-                    lblRainfall.Text = "Not Requested";
+                    gaugeRainfall.Value = Convert.ToDouble("0");
+                    MessageBox.Show("Error in retreiving rainfall data", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (mf.ReadTemp || !mf.Temp[1].Equals("Server Error"))
+
+                if (!mf.Temp[1].Equals("Server Error"))
                 {
-                    lblTemperature.Text = mf.Temp[1] + "°C";
-                    gaugeTemp.Value = Convert.ToDouble(mf.Temp[1]);
+                    if (mf.ReadTemp == true)
+                    {
+                        gaugeTemp.Value = Convert.ToDouble(mf.Temp[1]);
+                    }
+                    else
+                    {
+                        gaugeTemp.Value = 0.0;
+                    }
                 }
                 else
                 {
-                    lblTemperature.Text = "Not Requested";
+                    gaugeTemp.Value = 0.0;
+                    MessageBox.Show("Error in retreiving temperature data", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                lblLocation.Text = mf.LocationName;
-                lblLastUpdated.Text = mf.UpdateTimeStamp;
+                gBoxLocation.Text = mf.LocationName;
+                gBoxLastUpdated.Text = mf.UpdateTimeStamp;
 
 
             }
@@ -114,17 +135,12 @@ namespace WeatherMonitor
                         lb20s.Items.Add(lf.LocationName + ": Temp-" + cbxTemp.Checked + " Rain-" + cbxRain.Checked);//Adding the monitor to the visual list.
                         lb20s.SelectedIndex = lb20s.Items.Count - 1;
                     }
-                    
-
-                    //Form test = new MonitorTemplate(monCol.MonitorArray[monCol.MonitorArray.Count - 1]);
-                    //test.Show();
                 }
                 else
                 {
                     Console.Out.WriteLine("Please select a location!");
                     MessageBox.Show("Please select a location from the location drop down menu", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
             }
             catch (Exception e2)
             {

@@ -64,7 +64,7 @@ namespace WeatherMonitor
                         temp = wi.getTemperature(base.LocationName);//fetching temperature
                         if (temp[1] == "")//Handling server side errors.
                         {
-                            temp[1] = " Server Error ";
+                            temp[1] = "Server Error";
                         }
                         Console.Out.WriteLine("Temperature updated: " + temp[1]);
                         updateTimeStamp = temp[0];//Update timestamp that is included in the temperature fetch
@@ -78,7 +78,7 @@ namespace WeatherMonitor
                         rain = wi.getRainfall(base.LocationName);//fetching rain
                         if (rain[1] == "")//Handling server side errors.
                         {
-                            rain[1] = " Server Error ";
+                            rain[1] = "Server Error";
                         }
                         Console.Out.WriteLine("Rainfall updated: " + rain[1]);
                         updateTimeStamp = rain[0];//Update timestamp that is included in the temperature fetch

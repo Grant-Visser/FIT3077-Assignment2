@@ -73,8 +73,6 @@
             this.lblLastUpdated = new System.Windows.Forms.Label();
             this.gBoxLocation = new System.Windows.Forms.Label();
             this.gBoxLastUpdated = new System.Windows.Forms.Label();
-            this.gBoxRainfall = new System.Windows.Forms.Label();
-            this.gBoxTemperature = new System.Windows.Forms.Label();
             this.lblLocationHeader = new System.Windows.Forms.Label();
             this.lblTemperatureHeader = new System.Windows.Forms.Label();
             this.lblRainfallHeader = new System.Windows.Forms.Label();
@@ -242,37 +240,21 @@
             this.gBoxLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gBoxLocation.Location = new System.Drawing.Point(290, 32);
+            this.gBoxLocation.Location = new System.Drawing.Point(284, 0);
             this.gBoxLocation.Name = "gBoxLocation";
-            this.gBoxLocation.Size = new System.Drawing.Size(373, 108);
+            this.gBoxLocation.Size = new System.Drawing.Size(632, 118);
             this.gBoxLocation.TabIndex = 42;
+            this.gBoxLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gBoxLastUpdated
             // 
             this.gBoxLastUpdated.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxLastUpdated.Location = new System.Drawing.Point(290, 394);
+            this.gBoxLastUpdated.Location = new System.Drawing.Point(286, 427);
             this.gBoxLastUpdated.Name = "gBoxLastUpdated";
-            this.gBoxLastUpdated.Size = new System.Drawing.Size(373, 111);
+            this.gBoxLastUpdated.Size = new System.Drawing.Size(630, 111);
             this.gBoxLastUpdated.TabIndex = 43;
-            // 
-            // gBoxRainfall
-            // 
-            this.gBoxRainfall.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gBoxRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxRainfall.Location = new System.Drawing.Point(290, 272);
-            this.gBoxRainfall.Name = "gBoxRainfall";
-            this.gBoxRainfall.Size = new System.Drawing.Size(373, 111);
-            this.gBoxRainfall.TabIndex = 44;
-            // 
-            // gBoxTemperature
-            // 
-            this.gBoxTemperature.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gBoxTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxTemperature.Location = new System.Drawing.Point(290, 151);
-            this.gBoxTemperature.Name = "gBoxTemperature";
-            this.gBoxTemperature.Size = new System.Drawing.Size(373, 111);
-            this.gBoxTemperature.TabIndex = 45;
+            this.gBoxLastUpdated.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLocationHeader
             // 
@@ -280,7 +262,7 @@
             this.lblLocationHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLocationHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLocationHeader.ForeColor = System.Drawing.Color.White;
-            this.lblLocationHeader.Location = new System.Drawing.Point(290, 9);
+            this.lblLocationHeader.Location = new System.Drawing.Point(284, 0);
             this.lblLocationHeader.Name = "lblLocationHeader";
             this.lblLocationHeader.Size = new System.Drawing.Size(104, 25);
             this.lblLocationHeader.TabIndex = 46;
@@ -292,7 +274,7 @@
             this.lblTemperatureHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblTemperatureHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblTemperatureHeader.ForeColor = System.Drawing.Color.White;
-            this.lblTemperatureHeader.Location = new System.Drawing.Point(290, 128);
+            this.lblTemperatureHeader.Location = new System.Drawing.Point(367, 134);
             this.lblTemperatureHeader.Name = "lblTemperatureHeader";
             this.lblTemperatureHeader.Size = new System.Drawing.Size(152, 25);
             this.lblTemperatureHeader.TabIndex = 47;
@@ -304,7 +286,7 @@
             this.lblRainfallHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblRainfallHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblRainfallHeader.ForeColor = System.Drawing.Color.White;
-            this.lblRainfallHeader.Location = new System.Drawing.Point(288, 249);
+            this.lblRainfallHeader.Location = new System.Drawing.Point(707, 134);
             this.lblRainfallHeader.Name = "lblRainfallHeader";
             this.lblRainfallHeader.Size = new System.Drawing.Size(91, 25);
             this.lblRainfallHeader.TabIndex = 48;
@@ -316,7 +298,7 @@
             this.lblLastUpdatedHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLastUpdatedHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLastUpdatedHeader.ForeColor = System.Drawing.Color.White;
-            this.lblLastUpdatedHeader.Location = new System.Drawing.Point(290, 371);
+            this.lblLastUpdatedHeader.Location = new System.Drawing.Point(284, 427);
             this.lblLastUpdatedHeader.Name = "lblLastUpdatedHeader";
             this.lblLastUpdatedHeader.Size = new System.Drawing.Size(155, 25);
             this.lblLastUpdatedHeader.TabIndex = 49;
@@ -350,18 +332,19 @@
             // 
             // gaugeTemp
             // 
-            this.gaugeTemp.Location = new System.Drawing.Point(669, 128);
+            this.gaugeTemp.BackColorTransparent = true;
+            this.gaugeTemp.Location = new System.Drawing.Point(296, 170);
             this.gaugeTemp.Name = "gaugeTemp";
-            this.gaugeTemp.Size = new System.Drawing.Size(126, 111);
+            this.gaugeTemp.Size = new System.Drawing.Size(300, 245);
             this.gaugeTemp.TabIndex = 53;
             this.gaugeTemp.Text = "solidGauge1";
             // 
             // gaugeRainfall
             // 
             this.gaugeRainfall.BackColorTransparent = true;
-            this.gaugeRainfall.Location = new System.Drawing.Point(669, 245);
+            this.gaugeRainfall.Location = new System.Drawing.Point(601, 170);
             this.gaugeRainfall.Name = "gaugeRainfall";
-            this.gaugeRainfall.Size = new System.Drawing.Size(126, 111);
+            this.gaugeRainfall.Size = new System.Drawing.Size(300, 245);
             this.gaugeRainfall.TabIndex = 54;
             this.gaugeRainfall.Text = "solidGauge2";
             // 
@@ -457,7 +440,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.ClientSize = new System.Drawing.Size(1133, 539);
+            this.ClientSize = new System.Drawing.Size(916, 539);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gaugeRainfall);
@@ -474,8 +457,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNav);
             this.Controls.Add(this.gBoxLastUpdated);
-            this.Controls.Add(this.gBoxRainfall);
-            this.Controls.Add(this.gBoxTemperature);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "lab";
             this.Text = "Melbourne Weather Monitor";
@@ -514,8 +495,6 @@
         private System.Windows.Forms.Label lblLastUpdated;
         private System.Windows.Forms.Label gBoxLocation;
         private System.Windows.Forms.Label gBoxLastUpdated;
-        private System.Windows.Forms.Label gBoxRainfall;
-        private System.Windows.Forms.Label gBoxTemperature;
         private System.Windows.Forms.Label lblLocationHeader;
         private System.Windows.Forms.Label lblTemperatureHeader;
         private System.Windows.Forms.Label lblRainfallHeader;

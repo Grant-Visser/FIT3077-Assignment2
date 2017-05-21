@@ -60,8 +60,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lab));
             this.lblNav = new System.Windows.Forms.Label();
-            this.btnAddMonitor = new System.Windows.Forms.Button();
-            this.btnMonitors = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxLocation = new System.Windows.Forms.ComboBox();
@@ -83,10 +81,18 @@
             this.lblLastUpdatedHeader = new System.Windows.Forms.Label();
             this.lblRainfall = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.chart1 = new LiveCharts.WinForms.CartesianChart();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.solidGauge1 = new LiveCharts.WinForms.SolidGauge();
-            this.solidGauge2 = new LiveCharts.WinForms.SolidGauge();
+            this.gaugeTemp = new LiveCharts.WinForms.SolidGauge();
+            this.gaugeRainfall = new LiveCharts.WinForms.SolidGauge();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbx5min = new System.Windows.Forms.RadioButton();
+            this.rbx20s = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRemoveForms = new System.Windows.Forms.Button();
+            this.lb20s = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNav
@@ -95,37 +101,8 @@
             this.lblNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblNav.Location = new System.Drawing.Point(0, 0);
             this.lblNav.Name = "lblNav";
-            this.lblNav.Size = new System.Drawing.Size(284, 492);
+            this.lblNav.Size = new System.Drawing.Size(284, 539);
             this.lblNav.TabIndex = 3;
-            // 
-            // btnAddMonitor
-            // 
-            this.btnAddMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btnAddMonitor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddMonitor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMonitor.ForeColor = System.Drawing.Color.Silver;
-            this.btnAddMonitor.Location = new System.Drawing.Point(1, 75);
-            this.btnAddMonitor.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddMonitor.Name = "btnAddMonitor";
-            this.btnAddMonitor.Size = new System.Drawing.Size(283, 51);
-            this.btnAddMonitor.TabIndex = 6;
-            this.btnAddMonitor.Text = "Add Monitor";
-            this.btnAddMonitor.UseVisualStyleBackColor = false;
-            // 
-            // btnMonitors
-            // 
-            this.btnMonitors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.btnMonitors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMonitors.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMonitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMonitors.ForeColor = System.Drawing.Color.Silver;
-            this.btnMonitors.Location = new System.Drawing.Point(1, 256);
-            this.btnMonitors.Name = "btnMonitors";
-            this.btnMonitors.Size = new System.Drawing.Size(283, 53);
-            this.btnMonitors.TabIndex = 7;
-            this.btnMonitors.Text = "Monitors";
-            this.btnMonitors.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
@@ -133,7 +110,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Silver;
-            this.btnAdd.Location = new System.Drawing.Point(31, 218);
+            this.btnAdd.Location = new System.Drawing.Point(23, 138);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(215, 32);
             this.btnAdd.TabIndex = 11;
@@ -147,7 +124,7 @@
             this.label1.Font = new System.Drawing.Font("Pacifico", 25F);
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(13, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(263, 66);
             this.label1.TabIndex = 15;
@@ -156,12 +133,13 @@
             // 
             // cBoxLocation
             // 
+            this.cBoxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBoxLocation.FormattingEnabled = true;
             this.cBoxLocation.Items.AddRange(new object[] {
             "Free State Orange Farm"});
-            this.cBoxLocation.Location = new System.Drawing.Point(101, 133);
+            this.cBoxLocation.Location = new System.Drawing.Point(93, 61);
             this.cBoxLocation.Name = "cBoxLocation";
-            this.cBoxLocation.Size = new System.Drawing.Size(174, 21);
+            this.cBoxLocation.Size = new System.Drawing.Size(163, 21);
             this.cBoxLocation.TabIndex = 17;
             this.cBoxLocation.Text = "Please Make a Selection";
             // 
@@ -170,7 +148,7 @@
             this.lblLocationcbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.lblLocationcbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblLocationcbox.ForeColor = System.Drawing.Color.White;
-            this.lblLocationcbox.Location = new System.Drawing.Point(28, 133);
+            this.lblLocationcbox.Location = new System.Drawing.Point(20, 61);
             this.lblLocationcbox.Name = "lblLocationcbox";
             this.lblLocationcbox.Size = new System.Drawing.Size(67, 21);
             this.lblLocationcbox.TabIndex = 18;
@@ -180,10 +158,11 @@
             // 
             this.lbMonitors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbMonitors.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMonitors.FormattingEnabled = true;
-            this.lbMonitors.Location = new System.Drawing.Point(11, 322);
+            this.lbMonitors.Location = new System.Drawing.Point(4, 21);
             this.lbMonitors.Name = "lbMonitors";
-            this.lbMonitors.Size = new System.Drawing.Size(264, 121);
+            this.lbMonitors.Size = new System.Drawing.Size(264, 108);
             this.lbMonitors.TabIndex = 19;
             this.lbMonitors.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -206,7 +185,7 @@
             this.cbxRain.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxRain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbxRain.ForeColor = System.Drawing.SystemColors.Control;
-            this.cbxRain.Location = new System.Drawing.Point(31, 158);
+            this.cbxRain.Location = new System.Drawing.Point(23, 85);
             this.cbxRain.Name = "cbxRain";
             this.cbxRain.Size = new System.Drawing.Size(61, 24);
             this.cbxRain.TabIndex = 29;
@@ -220,7 +199,7 @@
             this.cbxTemp.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbxTemp.ForeColor = System.Drawing.SystemColors.Control;
-            this.cbxTemp.Location = new System.Drawing.Point(31, 183);
+            this.cbxTemp.Location = new System.Drawing.Point(23, 110);
             this.cbxTemp.Name = "cbxTemp";
             this.cbxTemp.Size = new System.Drawing.Size(119, 24);
             this.cbxTemp.TabIndex = 30;
@@ -260,41 +239,37 @@
             // 
             // gBoxLocation
             // 
-            this.gBoxLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gBoxLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gBoxLocation.Location = new System.Drawing.Point(290, 9);
+            this.gBoxLocation.Location = new System.Drawing.Point(290, 32);
             this.gBoxLocation.Name = "gBoxLocation";
             this.gBoxLocation.Size = new System.Drawing.Size(373, 108);
             this.gBoxLocation.TabIndex = 42;
             // 
             // gBoxLastUpdated
             // 
-            this.gBoxLastUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gBoxLastUpdated.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxLastUpdated.Location = new System.Drawing.Point(290, 371);
+            this.gBoxLastUpdated.Location = new System.Drawing.Point(290, 394);
             this.gBoxLastUpdated.Name = "gBoxLastUpdated";
             this.gBoxLastUpdated.Size = new System.Drawing.Size(373, 111);
             this.gBoxLastUpdated.TabIndex = 43;
             // 
             // gBoxRainfall
             // 
-            this.gBoxRainfall.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gBoxRainfall.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxRainfall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxRainfall.Location = new System.Drawing.Point(290, 249);
+            this.gBoxRainfall.Location = new System.Drawing.Point(290, 272);
             this.gBoxRainfall.Name = "gBoxRainfall";
             this.gBoxRainfall.Size = new System.Drawing.Size(373, 111);
             this.gBoxRainfall.TabIndex = 44;
             // 
             // gBoxTemperature
             // 
-            this.gBoxTemperature.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gBoxTemperature.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gBoxTemperature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.gBoxTemperature.Location = new System.Drawing.Point(290, 128);
+            this.gBoxTemperature.Location = new System.Drawing.Point(290, 151);
             this.gBoxTemperature.Name = "gBoxTemperature";
             this.gBoxTemperature.Size = new System.Drawing.Size(373, 111);
             this.gBoxTemperature.TabIndex = 45;
@@ -363,62 +338,130 @@
             // 
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.Silver;
-            this.btnRemove.Location = new System.Drawing.Point(31, 450);
+            this.btnRemove.Location = new System.Drawing.Point(4, 130);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(215, 32);
+            this.btnRemove.Size = new System.Drawing.Size(264, 21);
             this.btnRemove.TabIndex = 50;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // chart1
+            // gaugeTemp
             // 
-            this.chart1.BackColorTransparent = true;
-            this.chart1.Location = new System.Drawing.Point(670, 9);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(451, 351);
-            this.chart1.TabIndex = 51;
-            this.chart1.Text = "cartesianChart1";
+            this.gaugeTemp.Location = new System.Drawing.Point(669, 128);
+            this.gaugeTemp.Name = "gaugeTemp";
+            this.gaugeTemp.Size = new System.Drawing.Size(126, 111);
+            this.gaugeTemp.TabIndex = 53;
+            this.gaugeTemp.Text = "solidGauge1";
             // 
-            // textBox1
+            // gaugeRainfall
             // 
-            this.textBox1.Location = new System.Drawing.Point(670, 371);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(451, 111);
-            this.textBox1.TabIndex = 52;
+            this.gaugeRainfall.BackColorTransparent = true;
+            this.gaugeRainfall.Location = new System.Drawing.Point(669, 245);
+            this.gaugeRainfall.Name = "gaugeRainfall";
+            this.gaugeRainfall.Size = new System.Drawing.Size(126, 111);
+            this.gaugeRainfall.TabIndex = 54;
+            this.gaugeRainfall.Text = "solidGauge2";
             // 
-            // solidGauge1
+            // fileSystemWatcher1
             // 
-            this.solidGauge1.Location = new System.Drawing.Point(538, 128);
-            this.solidGauge1.Name = "solidGauge1";
-            this.solidGauge1.Size = new System.Drawing.Size(126, 111);
-            this.solidGauge1.TabIndex = 53;
-            this.solidGauge1.Text = "solidGauge1";
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // solidGauge2
+            // groupBox1
             // 
-            this.solidGauge2.BackColorTransparent = true;
-            this.solidGauge2.Location = new System.Drawing.Point(538, 249);
-            this.solidGauge2.Name = "solidGauge2";
-            this.solidGauge2.Size = new System.Drawing.Size(126, 111);
-            this.solidGauge2.TabIndex = 54;
-            this.solidGauge2.Text = "solidGauge2";
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.groupBox1.Controls.Add(this.rbx5min);
+            this.groupBox1.Controls.Add(this.rbx20s);
+            this.groupBox1.Controls.Add(this.cBoxLocation);
+            this.groupBox1.Controls.Add(this.cbxTemp);
+            this.groupBox1.Controls.Add(this.cbxRain);
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.lblLocationcbox);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Location = new System.Drawing.Point(6, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(272, 181);
+            this.groupBox1.TabIndex = 56;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Create Monitor";
+            // 
+            // rbx5min
+            // 
+            this.rbx5min.Checked = true;
+            this.rbx5min.Location = new System.Drawing.Point(152, 26);
+            this.rbx5min.Name = "rbx5min";
+            this.rbx5min.Size = new System.Drawing.Size(104, 24);
+            this.rbx5min.TabIndex = 0;
+            this.rbx5min.TabStop = true;
+            this.rbx5min.Text = "5 Minute";
+            this.rbx5min.Click += new System.EventHandler(this.rbx5min_Click);
+            // 
+            // rbx20s
+            // 
+            this.rbx20s.AutoSize = true;
+            this.rbx20s.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbx20s.Location = new System.Drawing.Point(23, 26);
+            this.rbx20s.Name = "rbx20s";
+            this.rbx20s.Size = new System.Drawing.Size(104, 24);
+            this.rbx20s.TabIndex = 31;
+            this.rbx20s.Text = "20 Second";
+            this.rbx20s.UseVisualStyleBackColor = true;
+            this.rbx20s.Click += new System.EventHandler(this.rbx20s_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.groupBox2.Controls.Add(this.btnRemoveForms);
+            this.groupBox2.Controls.Add(this.lb20s);
+            this.groupBox2.Controls.Add(this.lbMonitors);
+            this.groupBox2.Controls.Add(this.btnRemove);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(6, 245);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(272, 290);
+            this.groupBox2.TabIndex = 57;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Monitors";
+            // 
+            // btnRemoveForms
+            // 
+            this.btnRemoveForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
+            this.btnRemoveForms.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemoveForms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveForms.ForeColor = System.Drawing.Color.Silver;
+            this.btnRemoveForms.Location = new System.Drawing.Point(4, 261);
+            this.btnRemoveForms.Name = "btnRemoveForms";
+            this.btnRemoveForms.Size = new System.Drawing.Size(264, 21);
+            this.btnRemoveForms.TabIndex = 52;
+            this.btnRemoveForms.Text = "Remove";
+            this.btnRemoveForms.UseVisualStyleBackColor = false;
+            this.btnRemoveForms.Click += new System.EventHandler(this.btnRemoveForms_Click);
+            // 
+            // lb20s
+            // 
+            this.lb20s.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb20s.FormattingEnabled = true;
+            this.lb20s.Location = new System.Drawing.Point(4, 153);
+            this.lb20s.Name = "lb20s";
+            this.lb20s.Size = new System.Drawing.Size(264, 108);
+            this.lb20s.TabIndex = 51;
+            this.lb20s.SelectedIndexChanged += new System.EventHandler(this.lb20s_SelectedIndexChanged);
             // 
             // lab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
-            this.ClientSize = new System.Drawing.Size(1133, 492);
-            this.Controls.Add(this.solidGauge2);
-            this.Controls.Add(this.solidGauge1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.btnRemove);
+            this.ClientSize = new System.Drawing.Size(1133, 539);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gaugeRainfall);
+            this.Controls.Add(this.gaugeTemp);
             this.Controls.Add(this.lblLastUpdatedHeader);
             this.Controls.Add(this.lblRainfallHeader);
             this.Controls.Add(this.lblTemperatureHeader);
@@ -428,15 +471,7 @@
             this.Controls.Add(this.gBoxLocation);
             this.Controls.Add(this.lblLastUpdated);
             this.Controls.Add(this.lblRainfall);
-            this.Controls.Add(this.cbxTemp);
-            this.Controls.Add(this.cbxRain);
-            this.Controls.Add(this.lbMonitors);
-            this.Controls.Add(this.lblLocationcbox);
-            this.Controls.Add(this.cBoxLocation);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnMonitors);
-            this.Controls.Add(this.btnAddMonitor);
             this.Controls.Add(this.lblNav);
             this.Controls.Add(this.gBoxLastUpdated);
             this.Controls.Add(this.gBoxRainfall);
@@ -444,6 +479,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "lab";
             this.Text = "Melbourne Weather Monitor";
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,10 +495,6 @@
 
 
         private System.Windows.Forms.Label lblNav;
-
-        private System.Windows.Forms.Button btnAddMonitor;
-
-        private System.Windows.Forms.Button btnMonitors;
 
         private System.Windows.Forms.Button btnAdd;
 
@@ -487,10 +522,15 @@
         private System.Windows.Forms.Label lblLastUpdatedHeader;
         private System.Windows.Forms.Label lblRainfall;
         private System.Windows.Forms.Button btnRemove;
-        private LiveCharts.WinForms.CartesianChart chart1;
-        public System.Windows.Forms.TextBox textBox1;
-        private LiveCharts.WinForms.SolidGauge solidGauge1;
-        private LiveCharts.WinForms.SolidGauge solidGauge2;
+        private LiveCharts.WinForms.SolidGauge gaugeTemp;
+        private LiveCharts.WinForms.SolidGauge gaugeRainfall;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbx20s;
+        private System.Windows.Forms.RadioButton rbx5min;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnRemoveForms;
+        private System.Windows.Forms.ListBox lb20s;
     }
 
 }

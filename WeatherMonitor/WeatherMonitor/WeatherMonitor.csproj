@@ -66,6 +66,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\MelbourneWeatherTimelapse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="MonitorFactory.cs" />
     <Compile Include="MonitorCollection.cs" />
     <Compile Include="frm1.cs">
@@ -76,11 +81,21 @@
     </Compile>
     <Compile Include="LocationCollection.cs" />
     <Compile Include="LocationFactory.cs" />
+    <Compile Include="MonitorTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorTemplate.Designer.cs">
+      <DependentUpon>MonitorTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeLapse.cs" />
     <Compile Include="WebInterface.cs" />
     <EmbeddedResource Include="frm1.resx">
       <DependentUpon>frm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorTemplate.resx">
+      <DependentUpon>MonitorTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +114,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MelbourneWeatherService\WeatherMonitor.MelbourneWeatherService.getTemperatureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MelbourneWeatherTimelapse\MelbourneWeatherTimeLapse.wsdl" />
+    <None Include="Connected Services\MelbourneWeatherTimelapse\WeatherMonitor.MelbourneWeatherTimelapse.getLocationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MelbourneWeatherTimelapse\WeatherMonitor.MelbourneWeatherTimelapse.getWeatherResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -120,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\MelbourneWeatherService\" />
+    <WCFMetadataStorage Include="Connected Services\MelbourneWeatherTimelapse\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MelbourneWeatherService\configuration91.svcinfo" />
@@ -129,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\MelbourneWeatherService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MelbourneWeatherTimelapse\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MelbourneWeatherTimelapse\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MelbourneWeatherTimelapse\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

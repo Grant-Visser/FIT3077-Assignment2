@@ -2,7 +2,7 @@
 
 namespace WeatherMonitor
 {
-    class MonitorFactory : LocationFactory //Extends the LocationFactory class, which means we need to call it's constructor somewhere.
+    public class MonitorFactory : LocationFactory //Extends the LocationFactory class, which means we need to call it's constructor somewhere.
     {
         //Instance Variables
         private string updateTimeStamp;

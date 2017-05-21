@@ -2,7 +2,7 @@
 
 namespace WeatherMonitor
 {
-    class LocationFactory
+    public class LocationFactory
     {
         //Instance Variables
         private string locationName;

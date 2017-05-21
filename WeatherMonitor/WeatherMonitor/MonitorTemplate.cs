@@ -31,5 +31,9 @@ namespace WeatherMonitor
             gaugeRainfall.Value = Convert.ToDouble(mf.Rain[1]);
             gaugeTemp.Value = Convert.ToDouble(mf.Temp[1]);
         }
+
+       
+
+       
     }
 }

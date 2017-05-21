@@ -69,7 +69,7 @@ namespace WeatherMonitor
                 {
                     if (mf.ReadRain == true)
                     {
-                        gaugeRainfall.Value = Convert.ToDouble(mf.Rain[1]);
+                        gaugeRainfall.Value = Convert.ToDouble(mf.Rain[1])  ; 
                     }
                     else
                     {
@@ -228,6 +228,16 @@ namespace WeatherMonitor
                 MessageBox.Show("Error in removing monitor", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.Out.WriteLine("Error in removing Monitor: " + e3);
             }
+        }
+
+        private void gaugeTemp_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
+        }
+
+        private void lab_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

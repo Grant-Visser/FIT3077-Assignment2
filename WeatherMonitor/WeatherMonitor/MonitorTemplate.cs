@@ -95,6 +95,7 @@ namespace WeatherMonitor
             gaugeTemp.To = 40;
             gaugeRainfall.To = 3;
             gBoxLocation.Text = mf.LocationName;
+            tmrUpdate_Tick(this, null);
             txtOut.Text += "Initialised @" + mf.UpdateTimeStamp + " - Temperature: " + mf.Temp[1] + "°C - Rainfall: " + mf.Rain[2] + "mm" + Environment.NewLine + "=======================" + Environment.NewLine;
         }
 
@@ -102,9 +103,41 @@ namespace WeatherMonitor
         {
             txtOut.Text += "Updating" + Environment.NewLine + "=======================" + Environment.NewLine;
             mf.update();
-            gaugeRainfall.Value = Convert.ToDouble(mf.Rain[2]);
-            gaugeTemp.Value = Convert.ToDouble(mf.Temp[1]);
+            if (!mf.Rain[1].Equals("Server Error"))
+            {
+                if (mf.ReadRain == true)
+                {
+                    gaugeRainfall.Value = Convert.ToDouble(mf.Rain[2]);
+                }
+                else
+                {
+                    gaugeRainfall.Value = 0.0;
+                }
+            }
+            else
+            {
+                gaugeRainfall.Value = 0.0;
+                MessageBox.Show("Error in retreiving rainfall data", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (!mf.Temp[1].Equals("Server Error"))
+            {
+                if (mf.ReadTemp == true)
+                {
+                    gaugeTemp.Value = Convert.ToDouble(mf.Temp[1]);
+                }
+                else
+                {
+                    gaugeTemp.Value = 0.0;
+                }
+            }
+            else
+            {
+                gaugeTemp.Value = 0.0;
+                MessageBox.Show("Error in retreiving temperature data", "Melbourne Weather Service", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             txtOut.Text += "Update @" + mf.UpdateTimeStamp + " - Temperature: " + mf.Temp[1] + "°C - Rainfall: " + mf.Rain[2]+ "mm" +Environment.NewLine + "=======================" + Environment.NewLine;
+            //Graphing
 
             var now = System.DateTime.Now;
 

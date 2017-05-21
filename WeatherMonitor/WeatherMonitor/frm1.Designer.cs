@@ -313,7 +313,6 @@
             this.gaugeTemp.Size = new System.Drawing.Size(300, 245);
             this.gaugeTemp.TabIndex = 53;
             this.gaugeTemp.Text = "solidGauge1";
-            this.gaugeTemp.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.gaugeTemp_ChildChanged);
             // 
             // gaugeRainfall
             // 
@@ -429,7 +428,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "lab";
             this.Text = "Melbourne Weather Monitor";
-            this.Load += new System.EventHandler(this.lab_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

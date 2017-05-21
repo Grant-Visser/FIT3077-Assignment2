@@ -75,7 +75,6 @@ namespace WeatherMonitor
                     {
                         gaugeRainfall.Value = 0.0;
                     }
-                    
                 }
                 else
                 {
@@ -123,14 +122,14 @@ namespace WeatherMonitor
                     if (rbx5min.Checked)
                     {
                         LocationFactory lf = locCol5m.LocationArray[cBoxLocation.SelectedIndex]; //assigning a location factory to the one selected by the user from the drop down.
-                        monCol5m.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked));//Creating a new monitor factory element and adding it to the collection.
+                        monCol5m.addToCollection(new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked,1));//Creating a new monitor factory element and adding it to the collection.
                         lbMonitors.Items.Add(lf.LocationName + ": Temp-" + cbxTemp.Checked + " Rain-" + cbxRain.Checked);//Adding the monitor to the visual list.
                         lbMonitors.SelectedIndex = lbMonitors.Items.Count - 1;
                     }
                     else
                     {
                         LocationFactory lf = locCol20s.LocationArray[cBoxLocation.SelectedIndex]; //assigning a location factory to the one selected by the user from the drop down.
-                        MonitorFactory mf = new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked);
+                        MonitorFactory mf = new MonitorFactory(lf, cbxRain.Checked, cbxTemp.Checked,2);
                         monCol20s.addToCollection(mf);//Creating a new monitor factory element and adding it to the collection.
                         lb20s.Items.Add(lf.LocationName + ": Temp-" + cbxTemp.Checked + " Rain-" + cbxRain.Checked);//Adding the monitor to the visual list.
                         lb20s.SelectedIndex = lb20s.Items.Count - 1;

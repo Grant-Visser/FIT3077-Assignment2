@@ -20,7 +20,7 @@ namespace WeatherMonitor
             gaugeRainfall.Uses360Mode = true;
             gaugeTemp.Uses360Mode = true;
             gaugeTemp.To = 40;
-            gaugeRainfall.To = 5;
+            gaugeRainfall.To = 3;
 
             locCol5m.LocationArray.Clear();//initialises the array
             locCol20s.LocationArray.Clear();//initialises the array

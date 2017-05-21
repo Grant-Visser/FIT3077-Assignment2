@@ -113,6 +113,7 @@ namespace WeatherMonitor
                             if (readTemp)//If we need to get the temp, do the code below
                             {
                                 temp = tl.getWeather(base.LocationName);//fetching temperature
+                                temp[1] = Convert.ToString(Math.Round(Convert.ToDouble(temp[1]) - 273.15,2));//From Kelvin to C
                                 if (temp[1] == "")//Handling server side errors.
                                 {
                                     temp[1] = "Server Error";
@@ -128,6 +129,7 @@ namespace WeatherMonitor
                             if (readRain)
                             {
                                 rain = tl.getWeather(base.LocationName);//fetching rain
+                                rain[2] = Convert.ToString(Math.Round(Convert.ToDouble(rain[2]), 2));
                                 if (rain[2] == "")//Handling server side errors.
                                 {
                                     rain[2] = "Server Error";

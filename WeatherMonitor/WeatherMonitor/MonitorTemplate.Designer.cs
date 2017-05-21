@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gaugeTemp = new LiveCharts.WinForms.SolidGauge();
             this.gaugeRainfall = new LiveCharts.WinForms.SolidGauge();
             this.gBoxLocation = new System.Windows.Forms.Label();
@@ -37,6 +38,9 @@
             this.lblTemperatureHeader = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtOut = new System.Windows.Forms.TextBox();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,9 +67,9 @@
             this.gBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.gBoxLocation.Location = new System.Drawing.Point(2, 3);
+            this.gBoxLocation.Location = new System.Drawing.Point(-4, -3);
             this.gBoxLocation.Name = "gBoxLocation";
-            this.gBoxLocation.Size = new System.Drawing.Size(937, 96);
+            this.gBoxLocation.Size = new System.Drawing.Size(946, 102);
             this.gBoxLocation.TabIndex = 43;
             this.gBoxLocation.Text = "Melbourne (Olympic park)";
             this.gBoxLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +84,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(385, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(554, 330);
+            this.label1.Size = new System.Drawing.Size(557, 330);
             this.label1.TabIndex = 44;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -93,7 +97,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Location = new System.Drawing.Point(385, 433);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(554, 121);
+            this.label2.Size = new System.Drawing.Size(557, 127);
             this.label2.TabIndex = 45;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -103,7 +107,7 @@
             this.lblLocationHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLocationHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblLocationHeader.ForeColor = System.Drawing.Color.White;
-            this.lblLocationHeader.Location = new System.Drawing.Point(2, 3);
+            this.lblLocationHeader.Location = new System.Drawing.Point(1, 1);
             this.lblLocationHeader.Name = "lblLocationHeader";
             this.lblLocationHeader.Size = new System.Drawing.Size(104, 25);
             this.lblLocationHeader.TabIndex = 47;
@@ -142,10 +146,33 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.gaugeRainfall);
             this.panel1.Controls.Add(this.lblTemperatureHeader);
-            this.panel1.Location = new System.Drawing.Point(7, 104);
+            this.panel1.Location = new System.Drawing.Point(1, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 450);
+            this.panel1.Size = new System.Drawing.Size(383, 453);
             this.panel1.TabIndex = 50;
+            // 
+            // txtOut
+            // 
+            this.txtOut.Location = new System.Drawing.Point(386, 433);
+            this.txtOut.Multiline = true;
+            this.txtOut.Name = "txtOut";
+            this.txtOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtOut.Size = new System.Drawing.Size(556, 127);
+            this.txtOut.TabIndex = 51;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(386, 101);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(556, 330);
+            this.cartesianChart1.TabIndex = 52;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
+            // tmrUpdate
+            // 
+            this.tmrUpdate.Enabled = true;
+            this.tmrUpdate.Interval = 20000;
+            this.tmrUpdate.Tick += new System.EventHandler(this.tmrUpdate_Tick);
             // 
             // MonitorTemplate
             // 
@@ -153,6 +180,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(942, 557);
+            this.Controls.Add(this.cartesianChart1);
+            this.Controls.Add(this.txtOut);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblLocationHeader);
             this.Controls.Add(this.label2);
@@ -180,5 +209,8 @@
         private System.Windows.Forms.Label lblTemperatureHeader;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtOut;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Timer tmrUpdate;
     }
 }

@@ -98,8 +98,11 @@ namespace WeatherMonitor
             gaugeTemp.Uses360Mode = true;
             gaugeTemp.To = 40;
             gaugeRainfall.To = 3;
+            cartesianChart1.ScrollMode = ScrollMode.X;
+            cartesianChart1.Pan = PanningOptions.X;
+            cartesianChart1.Zoom = ZoomingOptions.Xy;
+            cartesianChart1.LegendLocation = LegendLocation.Top;
             gBoxLocation.Text = mf.LocationName;
-            tmrUpdate_Tick(this, null);
             txtOut.Text += "Initialised @" + mf.UpdateTimeStamp + " - Temperature: " + mf.Temp[1] + "°C - Rainfall: " + mf.Rain[2] + "mm" + Environment.NewLine + "=======================" + Environment.NewLine;
         }
 

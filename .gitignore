@@ -4,3 +4,11 @@ WeatherMonitor/WeatherMonitor/obj/
 WeatherMonitor/WeatherMonitor/bin/
 
 WeatherMonitor/\.vs/WeatherMonitor/v15/\.suo
+
+WeatherMonitor/WeatherMonitor/publish/
+
+*.user
+
+WeatherMonitor/WeatherMonitor/Properties/
+
+*.zip

@@ -164,6 +164,7 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.cartesianChart1.ForeColor = System.Drawing.Color.Transparent;
             this.cartesianChart1.Location = new System.Drawing.Point(386, 101);
             this.cartesianChart1.Name = "cartesianChart1";

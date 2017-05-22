@@ -110,7 +110,7 @@ namespace WeatherMonitor
                             Console.Out.WriteLine("Updating");
                             TimeLapse tl = new TimeLapse();//Creating a new instance of my WebInterface class to fetch data.
 
-                            if (readTemp)//If we need to get the temp, do the code below
+                            if (true)//If we need to get the weather, as they are both included in the one API Call
                             {
                                 temp = tl.getWeather(base.LocationName);//fetching temperature
                                 temp[1] = Convert.ToString(Math.Round(Convert.ToDouble(temp[1]) - 273.15,2));//From Kelvin to C
@@ -125,22 +125,7 @@ namespace WeatherMonitor
                             {
                                 temp = new string[] { "Not Requested", "Not Requested", "Not Requested"};//Fill the string with nothing if you dont need it
                             }
-
-                            if (readRain)
-                            {
-                                rain = tl.getWeather(base.LocationName);//fetching rain
-                                rain[2] = Convert.ToString(Math.Round(Convert.ToDouble(rain[2]), 2));
-                                if (rain[2] == "")//Handling server side errors.
-                                {
-                                    rain[2] = "Server Error";
-                                }
-                                Console.Out.WriteLine("Rainfall updated: " + rain[2]);
-                                updateTimeStamp = rain[0];//Update timestamp that is included in the temperature fetch
-                            }
-                            else
-                            {
-                                rain = new string[] { "Not Requested", "Not Requested", "Not Requested"};//Fill the string with nothing if you dont need it
-                            }
+                            rain = temp;//Same data anyway.
                             return true;
                         }
                         catch (Exception e)//If it makes a mess, then do this

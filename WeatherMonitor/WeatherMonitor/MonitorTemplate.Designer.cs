@@ -47,6 +47,8 @@
             // 
             // gaugeTemp
             // 
+            this.gaugeTemp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeTemp.Location = new System.Drawing.Point(69, 38);
             this.gaugeTemp.Name = "gaugeTemp";
             this.gaugeTemp.Size = new System.Drawing.Size(213, 178);
@@ -55,6 +57,7 @@
             // 
             // gaugeRainfall
             // 
+            this.gaugeRainfall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeRainfall.Location = new System.Drawing.Point(69, 263);
             this.gaugeRainfall.Name = "gaugeRainfall";
             this.gaugeRainfall.Size = new System.Drawing.Size(213, 178);
@@ -116,6 +119,8 @@
             // 
             // lblTemperatureHeader
             // 
+            this.lblTemperatureHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTemperatureHeader.AutoSize = true;
             this.lblTemperatureHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.lblTemperatureHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
@@ -129,6 +134,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.label3.Font = new System.Drawing.Font("Century Gothic", 16F);
@@ -138,6 +144,7 @@
             this.label3.Size = new System.Drawing.Size(103, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Rainfall: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
@@ -155,6 +162,8 @@
             // 
             // txtOut
             // 
+            this.txtOut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOut.Location = new System.Drawing.Point(386, 433);
             this.txtOut.Multiline = true;
             this.txtOut.Name = "txtOut";
@@ -164,9 +173,12 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cartesianChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.cartesianChart1.ForeColor = System.Drawing.Color.Transparent;
-            this.cartesianChart1.Location = new System.Drawing.Point(386, 101);
+            this.cartesianChart1.Location = new System.Drawing.Point(386, 99);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(556, 330);
             this.cartesianChart1.TabIndex = 52;

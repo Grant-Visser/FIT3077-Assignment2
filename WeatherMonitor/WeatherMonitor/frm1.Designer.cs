@@ -115,7 +115,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
-            this.label1.Font = new System.Drawing.Font("Pacifico", 25F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label1.Location = new System.Drawing.Point(13, 0);
@@ -221,7 +221,8 @@
             // 
             // gBoxLocation
             // 
-            this.gBoxLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gBoxLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gBoxLocation.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -233,7 +234,8 @@
             // 
             // gBoxLastUpdated
             // 
-            this.gBoxLastUpdated.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gBoxLastUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gBoxLastUpdated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
             this.gBoxLastUpdated.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gBoxLastUpdated.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -269,6 +271,7 @@
             // 
             // lblRainfallHeader
             // 
+            this.lblRainfallHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRainfallHeader.AutoSize = true;
             this.lblRainfallHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblRainfallHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
@@ -281,6 +284,7 @@
             // 
             // lblLastUpdatedHeader
             // 
+            this.lblLastUpdatedHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblLastUpdatedHeader.AutoSize = true;
             this.lblLastUpdatedHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.lblLastUpdatedHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
@@ -307,6 +311,8 @@
             // 
             // gaugeTemp
             // 
+            this.gaugeTemp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gaugeTemp.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gaugeTemp.Location = new System.Drawing.Point(296, 170);
             this.gaugeTemp.Name = "gaugeTemp";
@@ -316,6 +322,8 @@
             // 
             // gaugeRainfall
             // 
+            this.gaugeRainfall.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gaugeRainfall.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gaugeRainfall.Location = new System.Drawing.Point(601, 170);
             this.gaugeRainfall.Name = "gaugeRainfall";

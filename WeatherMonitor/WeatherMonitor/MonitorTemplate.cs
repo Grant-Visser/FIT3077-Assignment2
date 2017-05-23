@@ -172,5 +172,10 @@ namespace WeatherMonitor
         {
 
         }
+
+        private void gBoxLocation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

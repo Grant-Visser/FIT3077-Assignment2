@@ -47,8 +47,7 @@
             // 
             // gaugeTemp
             // 
-            this.gaugeTemp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gaugeTemp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gaugeTemp.Location = new System.Drawing.Point(69, 38);
             this.gaugeTemp.Name = "gaugeTemp";
             this.gaugeTemp.Size = new System.Drawing.Size(213, 178);
@@ -57,7 +56,7 @@
             // 
             // gaugeRainfall
             // 
-            this.gaugeRainfall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.gaugeRainfall.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.gaugeRainfall.Location = new System.Drawing.Point(69, 263);
             this.gaugeRainfall.Name = "gaugeRainfall";
             this.gaugeRainfall.Size = new System.Drawing.Size(213, 178);
@@ -77,6 +76,7 @@
             this.gBoxLocation.TabIndex = 43;
             this.gBoxLocation.Text = "Melbourne (Olympic park)";
             this.gBoxLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gBoxLocation.Click += new System.EventHandler(this.gBoxLocation_Click);
             // 
             // label1
             // 
@@ -119,8 +119,6 @@
             // 
             // lblTemperatureHeader
             // 
-            this.lblTemperatureHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTemperatureHeader.AutoSize = true;
             this.lblTemperatureHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.lblTemperatureHeader.Font = new System.Drawing.Font("Century Gothic", 16F);
@@ -134,7 +132,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(31)))), ((int)(((byte)(47)))));
             this.label3.Font = new System.Drawing.Font("Century Gothic", 16F);
@@ -150,6 +148,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.gaugeTemp);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.gaugeRainfall);

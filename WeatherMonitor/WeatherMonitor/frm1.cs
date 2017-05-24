@@ -31,17 +31,21 @@ namespace WeatherMonitor
                 Console.Out.WriteLine("Pulling Locations 20s");
                 TimeLapse timeLapse = new TimeLapse();//Creating an instance of the weather interface I wrote.
                 location = timeLapse.getLocations();//Pulling string array of locations from server
+                Console.Out.WriteLine(location.Length);
                 foreach (string item in location)
                 {
                     locCol20s.addToCollection(new LocationFactory(item));//Create new location factory element and add it to the Location collection
+                    Console.Out.WriteLine(item);
                 }
-                location = null; //Resetting the array
+                location = null; //Resetting the array due to the fact that we start with the 20sec radio button selected
                 Console.Out.WriteLine("Pulling Locations 5 min");
                 WebInterface melbourneWeatherService = new WebInterface(); //Creating an instance of the weather interface I wrote.
                 location = melbourneWeatherService.getLocations();//Pulling string array of locations from server
+                Console.Out.WriteLine(location.Length);
                 foreach (string item in location)
                 {
                     locCol5m.addToCollection(new LocationFactory(item));//Create new location factory element and add it to the Location collection
+                    Console.Out.WriteLine(item);
                     cBoxLocation.Items.Add(item);//Adding the location to the interface(with the same index as above! :D)
                 }
             }

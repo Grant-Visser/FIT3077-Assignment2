@@ -14,3 +14,17 @@ Find the latest download here: [Releases](https://github.com/Monash-University-F
           
           A separate bin folder has been added in order to help the marker find the .exe easily so they can run the app and validate the functionality. 
 
+1. Assignment 2 Stage - 2
+
+          The diagrams and documentation required for this project have been added to the folder named Diagrams and documentation respectively. Please see inside for the files you need for marking.
+          
+          All Class files are located in the src folder. The application was coded in C# and as a result .cs files are available to the marker. There has been heavy commenting in order to help readability for markers that have not coded in C#. 
+           
+          There is now an installer available for the application The application cannot be built from these files due to the fact that a Windows Form application was created and the form design elements file is not strictly needed for this submission as detailed in forum posts made by Dr David Squire and Dr Andre Oboler.
+            
+          In order to remedy this, say for example, someone wanted to review and debug our source code in a way that would make it easier to mark, the entire solution created within Visual Studio 2017 has been included. This can be used to compile and debug the application.
+          
+          A separate bin folder has been added in order to help the marker find the .exe easily so they can run the app and validate the functionality.
+           
+                    
+ 

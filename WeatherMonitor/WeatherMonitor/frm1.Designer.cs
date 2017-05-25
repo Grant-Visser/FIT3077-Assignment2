@@ -231,6 +231,7 @@
             this.gBoxLocation.Size = new System.Drawing.Size(632, 118);
             this.gBoxLocation.TabIndex = 42;
             this.gBoxLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gBoxLocation.Click += new System.EventHandler(this.gBoxLocation_Click);
             // 
             // gBoxLastUpdated
             // 

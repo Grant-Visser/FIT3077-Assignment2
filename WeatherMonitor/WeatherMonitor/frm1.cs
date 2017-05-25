@@ -232,5 +232,10 @@ namespace WeatherMonitor
                 Console.Out.WriteLine("Error in removing Monitor: " + e3);
             }
         }
+
+        private void gBoxLocation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
